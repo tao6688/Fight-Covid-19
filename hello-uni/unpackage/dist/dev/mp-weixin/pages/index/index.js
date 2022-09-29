@@ -161,7 +161,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var GraphTest = function GraphTest() {__webpack_require__.e(/*! require.ensure | components/graph/graph_test */ "components/graph/graph_test").then((function () {return resolve(__webpack_require__(/*! @/components/graph/graph_test.vue */ 48));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var Graph = function Graph() {__webpack_require__.e(/*! require.ensure | components/graph-test/index */ "components/graph-test/index").then((function () {return resolve(__webpack_require__(/*! @/components/graph-test/index.vue */ 48));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
 
 
 
@@ -180,7 +180,7 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
   },
   components: {
-    GraphTest: GraphTest },
+    Graph: Graph },
 
   methods: {} };exports.default = _default;
 

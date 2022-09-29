@@ -1,0 +1,1 @@
+<view class="container"><echarts style="height:260px;" vue-id="1c5a54b7-1" option="{{option}}" data-event-opts="{{[['^click',[['echartsClick']]]]}}" bind:click="__e" bind:__l="__l"></echarts><button data-event-opts="{{[['tap',[['updateClick',['$event']]]]]}}" bindtap="__e">切换数据</button></view>

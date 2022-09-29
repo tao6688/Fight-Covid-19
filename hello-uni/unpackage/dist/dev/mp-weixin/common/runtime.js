@@ -109,7 +109,7 @@
 /******/ 		if(installedCssChunks[chunkId]) promises.push(installedCssChunks[chunkId]);
 /******/ 		else if(installedCssChunks[chunkId] !== 0 && cssChunks[chunkId]) {
 /******/ 			promises.push(installedCssChunks[chunkId] = new Promise(function(resolve, reject) {
-/******/ 				var href = "" + ({"components/graph/graph_test":"components/graph/graph_test","uni_modules/uni-link/components/uni-link/uni-link":"uni_modules/uni-link/components/uni-link/uni-link","components/echarts/echarts":"components/echarts/echarts"}[chunkId]||chunkId) + ".wxss";
+/******/ 				var href = "" + ({"components/graph-test/index":"components/graph-test/index","uni_modules/uni-link/components/uni-link/uni-link":"uni_modules/uni-link/components/uni-link/uni-link","components/echarts/echarts":"components/echarts/echarts"}[chunkId]||chunkId) + ".wxss";
 /******/ 				var fullhref = __webpack_require__.p + href;
 /******/ 				var existingLinkTags = document.getElementsByTagName("link");
 /******/ 				for(var i = 0; i < existingLinkTags.length; i++) {

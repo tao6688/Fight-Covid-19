@@ -2,7 +2,7 @@
 	"pages": [{
 			"path": "pages/index/index",
 			"style": {
-				"navigationBarTitleText": "echarts-renderjs"
+				"navigationBarTitleText": "当前疫情动态"
 				
 			}
 		},{
