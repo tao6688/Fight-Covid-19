@@ -2,7 +2,8 @@
 	"pages": [{
 			"path": "pages/index/index",
 			"style": {
-				"navigationBarTitleText": "uni-app"
+				"navigationBarTitleText": "echarts-renderjs"
+				
 			}
 		},{
 			"path" : "pages/post/post",
