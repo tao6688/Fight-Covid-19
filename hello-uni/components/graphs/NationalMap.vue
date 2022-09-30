@@ -1,14 +1,14 @@
 <template>
 	<view class="container">
-		<!-- 建议当前文件为所有可视化图表的父组件0929 -->
-		<echarts :option="option" style="height:260px" @click="echartsClick"></echarts>
+		<echarts :option="option" style="height:160px;" @click="echartsClick"></echarts>
 		<button @click="updateClick">切换数据</button>
 	</view>
 </template>
 
 <script>
+	import echarts from '@/components/echarts/echarts.vue'
 	export default {
-		name: 'GraphTest',
+		name: 'NationalMap',
 		data() {
 			return {
 				option: {},
@@ -115,22 +115,33 @@
 				}
 			}
 		},
-		methods: {
+		components: {
+			echarts,
+		},
+		onLoad(){
+			this.option=this.option2;
+		},
+		methods:{
+			/**
+			 * 点击事件
+			 * @param {Object} params
+			 */
 			echartsClick(params) {
 				console.log('点击数据', params)
 			},
+			/**
+			 * 切换数据
+			 */
 			updateClick() {
 				if (this.option === this.option2) {
 					this.option = this.option3
 				} else {
 					this.option = this.option2
 				}
-			}
-
-		},
-
+			}		
+		}
 	}
 </script>
 
-<style>
+<style scoped>
 </style>
