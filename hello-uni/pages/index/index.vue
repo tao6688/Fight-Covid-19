@@ -88,7 +88,7 @@
 		},
 		components: {
 			NationMap
-		},
+        },
 		methods: {
 		}
 	}

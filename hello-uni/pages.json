@@ -9,7 +9,7 @@
 			"path" : "pages/post/post",
 			"style" :                                                                                    
 			{
-				"navigationBarTitleText": "uni-app",
+				"navigationBarTitleText": "帖子",
 				"enablePullDownRefresh": false
 			}
             
@@ -29,7 +29,16 @@
                 "enablePullDownRefresh": false
             }
             
-        }
+        },
+		{
+		    "path" : "pages/edit/edit",
+		    "style" :                                                                                    
+		    {
+		        "navigationBarTitleText": "发布帖子",
+		        "enablePullDownRefresh": false
+		    }
+		    
+		}
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",

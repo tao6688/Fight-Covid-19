@@ -9215,11 +9215,18 @@ internalMixin(Vue);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../../../webpack/buildin/global.js */ 2)))
 
 /***/ }),
+<<<<<<< HEAD
 
 /***/ 5:
 /*!******************************************************************!*\
   !*** C:/Users/lsx37/Desktop/Fight-Covid-19/hello-uni/pages.json ***!
   \******************************************************************/
+=======
+/* 5 */
+/*!***************************************************************************!*\
+  !*** D:/front-end/coding/uniapp/同心抗疫/Fight-Covid-19/hello-uni/pages.json ***!
+  \***************************************************************************/
+>>>>>>> 2889040b816a3f8cf8e1b72d81e1334515a99cb5
 /*! no static exports found */
 /***/ (function(module, exports) {
 

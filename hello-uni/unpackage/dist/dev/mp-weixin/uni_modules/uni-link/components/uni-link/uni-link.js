@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 (global["webpackJsonp"] = global["webpackJsonp"] || []).push([["uni_modules/uni-link/components/uni-link/uni-link"],{
 
 /***/ 38:
@@ -271,3 +272,6 @@ __webpack_require__.r(__webpack_exports__);
     },
     [['uni_modules/uni-link/components/uni-link/uni-link-create-component']]
 ]);
+=======
+Component({})
+>>>>>>> 2889040b816a3f8cf8e1b72d81e1334515a99cb5
