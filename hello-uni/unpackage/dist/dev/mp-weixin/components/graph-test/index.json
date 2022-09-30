@@ -1,6 +1,4 @@
 {
-  "usingComponents": {
-    "echarts": "/components/echarts/echarts"
-  },
+  "usingComponents": {},
   "component": true
 }
