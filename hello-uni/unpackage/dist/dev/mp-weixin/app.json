@@ -3,7 +3,8 @@
     "pages/index/index",
     "pages/post/post",
     "pages/letter/letter",
-    "pages/person/person"
+    "pages/person/person",
+    "pages/edit/edit"
   ],
   "subPackages": [],
   "window": {
