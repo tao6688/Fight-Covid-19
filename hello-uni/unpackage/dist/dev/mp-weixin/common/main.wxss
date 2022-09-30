@@ -2354,10 +2354,11 @@
   border-color: #e9e9eb;
 }
 page {
-  background-color: #f5f5f5;
+  background-color: #D3D3D3;
+  width: 100%;
 }
 .example-info {
-  font-size: 14px;
+  font-size: 16px;
   color: #333;
   padding: 10px;
 }

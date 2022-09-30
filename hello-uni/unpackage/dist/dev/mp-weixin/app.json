@@ -9,8 +9,11 @@
   "window": {
     "navigationBarTextStyle": "black",
     "navigationBarTitleText": "uni-app",
-    "navigationBarBackgroundColor": "#F8F8F8",
-    "backgroundColor": "#F8F8F8"
+    "navigationBarBackgroundColor": "#4169E1",
+    "backgroundColor": "#F8F8F8",
+    "pageOrientation": "auto",
+    "enablePullDownRefresh": true,
+    "backgroundTextStyle": "dark"
   },
   "tabBar": {
     "color": "#7A7E83",
