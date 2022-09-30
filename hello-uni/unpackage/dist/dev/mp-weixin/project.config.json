@@ -21,7 +21,17 @@
     "libVersion": "2.26.2",
     "appid": "touristappid",
     "projectname": "hello-uni",
-    "condition": {},
+    "condition": {
+        "miniprogram": {
+            "list": [
+                {
+                    "name": "详情页",
+                    "pathName": "pages/index/index",
+                    "query": "id=99"
+                }
+            ]
+        }
+    },
     "editorSetting": {
         "tabIndent": "insertSpaces",
         "tabSize": 4
