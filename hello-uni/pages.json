@@ -39,6 +39,15 @@
 		    }
 		    
 		}
+        ,{
+            "path" : "pages/store/store",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
@@ -79,6 +88,11 @@
 			"iconPath": "static/tabbar/grid.png",
 			"selectedIconPath": "static/tabbar/grid_active.png",
 			"text": "私信"
+		}, {
+			"pagePath": "pages/store/store",
+			"iconPath": "static/tabbar/grid.png",
+			"selectedIconPath": "static/tabbar/grid_active.png",
+			"text": "商城"
 		}, {
 			"pagePath": "pages/person/person",
 			"iconPath": "static/tabbar/me.png",
