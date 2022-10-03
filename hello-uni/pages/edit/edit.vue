@@ -5,7 +5,14 @@
 			<form action="">
 				<view class="edit-item upload-picture">
 					<view class="outline">请上传图片</view>
-					<view class="upload-area">+</view>
+					<u-upload
+							:fileList="fileList1"
+							@afterRead="afterRead"
+							@delete="deletePic"
+							name="1"
+							multiple
+							:maxCount="10"
+						></u-upload>
 				</view>
 				<view class="edit-item edit-title">
 					<view class="outline">请添加标题</view>
@@ -20,12 +27,71 @@
 		</view>
 	</view>
 </template>
+<script>
+	export default {
+		data() {
+			return {
+				fileList1: [],
+			}
+		},
+		methods:{
+			// 删除图片
+			deletePic(event) {
+				this[`fileList${event.name}`].splice(event.index, 1)
+			},
+			// 新增图片
+			async afterRead(event) {
+				// 当设置 mutiple 为 true 时, file 为数组格式，否则为对象格式
+				let lists = [].concat(event.file)
+				let fileListLen = this[`fileList${event.name}`].length
+				lists.map((item) => {
+					this[`fileList${event.name}`].push({
+						...item,
+						status: 'uploading',
+						message: '上传中'
+					})
+				})
+				for (let i = 0; i < lists.length; i++) {
+					const result = await this.uploadFilePromise(lists[i].url)
+					let item = this[`fileList${event.name}`][fileListLen]
+					this[`fileList${event.name}`].splice(fileListLen, 1, Object.assign(item, {
+						status: 'success',
+						message: '',
+						url: result
+					}))
+					fileListLen++
+				}
+			},
+			uploadFilePromise(url) {
+				return new Promise((resolve, reject) => {
+					let a = uni.uploadFile({
+						url: 'http://192.168.2.21:7001/upload', // 仅为示例，非真实的接口地址
+						filePath: url,
+						name: 'file',
+						formData: {
+							user: 'test'
+						},
+						success: (res) => {
+							setTimeout(() => {
+								resolve(res.data.data)
+							}, 1000)
+						}
+					});
+				})
+			},
+		}
+
+	}
+</script>
 <style lang="scss">
+	page {
+		background-color: #f5f5f5;
+	}
 	.edit-page {
 		.top-area {
 			width: 100%;
 			height: 320rpx;
-			background: url("https://img1.imgtp.com/2022/09/30/XRIQFIpG.png") no-repeat center;
+			background: url("https://img1.imgtp.com/2022/10/03/ychIeyli.jpg") no-repeat center;
 			background-size: 100% 100%;
 		}
 		.edit-area {
@@ -38,19 +104,6 @@
 					font-size: 30rpx;
 					font-weight: 600;
 					margin-bottom: 20rpx;
-				}
-				.upload-area {
-					width: 140rpx;
-					height: 140rpx;
-					margin-top: 10rpx;
-					border: 2rpx solid #aaa;
-					border-radius: 10rpx;
-					font-size: 80rpx;
-					color: #aaa;
-					display: flex;
-					justify-content: center;
-					align-items: center;
-					// margin-bottom: 10rpx;
 				}
 				input {
 					margin: auto;
@@ -80,7 +133,7 @@
 				width: 95%;
 				height: 80rpx;
 				font-size: 28rpx;
-				background-color: #d7b6a5;
+				background-color: #38bfff;
 				color: #fff;
 				}
 		}

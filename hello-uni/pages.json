@@ -1,4 +1,7 @@
 {
+	"easycom": {
+			"^u-(.*)": "@/uni_modules/uview-ui/components/u-$1/u-$1.vue"
+		},
 	"pages": [{
 			"path": "pages/index/index",
 			"style": {
@@ -13,7 +16,16 @@
 				"enablePullDownRefresh": false
 			}
             
-        },{
+        },
+		{
+			"path" : "pages/post_detail/post_detail",
+			"style" :                                                                                    
+			{
+				"navigationBarTitleText": "帖子详情",
+				"enablePullDownRefresh": false
+			}
+		    
+		},{
             "path" : "pages/letter/letter",
             "style" :                                                                                    
             {
@@ -48,11 +60,20 @@
             }
             
         }
+        ,{
+            "path" : "pages/post_detail/post_detail",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
 	"globalStyle": {
-		"navigationBarTextStyle": "black",
+		"navigationBarTextStyle": "white",
 		"navigationBarTitleText": "uni-app",
-		"navigationBarBackgroundColor": "#4169E1",
+		"navigationBarBackgroundColor": "#38bfff",
 		"backgroundColor": "#F8F8F8",
 		"app-plus": {
 			"background": "#efeff4"

@@ -3,10 +3,10 @@
 		<view class="top-area">
 			<input type="text" placeholder="搜索帖子" />
 		</view>
-		<view class="classify">
+		<!-- <view class="classify">
 			<view class="active classify-item">全部</view>
 			<view class="classify-item">按地区</view>
-		</view>
+		</view> -->
 		<view class="post-list">
 			<view class="post-list-item" v-for="(post,index) in posts" :key="index">
 				<view class="item-title">{{post.post_title}}</view>
@@ -84,13 +84,16 @@
 </script>
 
 <style lang="scss">
+	page {
+		background-color: #f5f5f5;
+	}
 	.post-page {
 		position: relative;
 		.top-area {
 			position: relative;
 			width: 100%;
 			height: 320rpx;
-			background: url("https://img1.imgtp.com/2022/09/30/eyqX5vbv.png") no-repeat center;
+			background: url("https://img1.imgtp.com/2022/10/03/ychIeyli.jpg") no-repeat center;
 			background-size: 100% 100%;
 			input {
 				position: absolute;
@@ -190,10 +193,10 @@
 		.go-to-post {
 			position: fixed;
 			right: 50rpx;
-			bottom: 80rpx;
+			bottom: 110rpx;
 			width: 120rpx;
 			height: 120rpx;
-			background-color: #1e1e1e;
+			background-color: #38bfff;
 			border-radius: 50%;
 			padding: 25rpx;
 			box-sizing: border-box;
