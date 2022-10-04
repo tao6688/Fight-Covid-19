@@ -1,0 +1,13 @@
+<<<<<<< HEAD
+{
+	"uni-popup.cancel": "cancel",
+	"uni-popup.ok": "ok",
+=======
+{
+	"uni-popup.cancel": "cancel",
+	"uni-popup.ok": "ok",
+>>>>>>> 05dbcbb (更新主页面地图及组件)
+	"uni-popup.placeholder": "pleace enter",
+	"uni-popup.title": "Hint",
+	"uni-popup.shareTitle": "Share to"
+}

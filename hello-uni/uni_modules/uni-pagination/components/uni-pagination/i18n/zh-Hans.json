@@ -1,0 +1,12 @@
+<<<<<<< HEAD
+{
+	"uni-pagination.prevText": "上一页",
+	"uni-pagination.nextText": "下一页",
+	"uni-pagination.piecePerPage": "条/页"
+=======
+{
+	"uni-pagination.prevText": "上一页",
+	"uni-pagination.nextText": "下一页",
+	"uni-pagination.piecePerPage": "条/页"
+>>>>>>> 05dbcbb (更新主页面地图及组件)
+}

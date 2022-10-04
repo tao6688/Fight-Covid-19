@@ -1,0 +1,9 @@
+<<<<<<< HEAD
+{
+	"uni-search-bar.cancel": "cancel",
+=======
+{
+	"uni-search-bar.cancel": "cancel",
+>>>>>>> 05dbcbb (更新主页面地图及组件)
+	"uni-search-bar.placeholder": "請輸入搜索內容"
+}

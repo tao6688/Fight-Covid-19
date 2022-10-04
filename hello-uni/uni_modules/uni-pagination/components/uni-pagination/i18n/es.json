@@ -1,0 +1,12 @@
+<<<<<<< HEAD
+{
+	"uni-pagination.prevText": "anterior",
+	"uni-pagination.nextText": "prxima",
+	"uni-pagination.piecePerPage": "Art��culo/P��gina"
+=======
+{
+	"uni-pagination.prevText": "anterior",
+	"uni-pagination.nextText": "prxima",
+	"uni-pagination.piecePerPage": "Art��culo/P��gina"
+>>>>>>> 05dbcbb (更新主页面地图及组件)
+}

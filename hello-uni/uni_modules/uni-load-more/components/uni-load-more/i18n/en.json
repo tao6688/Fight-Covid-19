@@ -1,0 +1,9 @@
+<<<<<<< HEAD
+{
+=======
+{
+>>>>>>> 05dbcbb (更新主页面地图及组件)
+	"uni-load-more.contentdown": "Pull up to show more",
+	"uni-load-more.contentrefresh": "loading...",
+	"uni-load-more.contentnomore": "No more data"
+}

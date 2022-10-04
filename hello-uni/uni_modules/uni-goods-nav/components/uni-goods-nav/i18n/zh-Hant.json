@@ -1,0 +1,15 @@
+<<<<<<< HEAD
+{
+	"uni-goods-nav.options.shop": "店鋪",
+	"uni-goods-nav.options.cart": "購物車",
+	"uni-goods-nav.buttonGroup.addToCart": "加入購物車",
+	"uni-goods-nav.buttonGroup.buyNow": "立即購買"
+}
+=======
+{
+	"uni-goods-nav.options.shop": "店鋪",
+	"uni-goods-nav.options.cart": "購物車",
+	"uni-goods-nav.buttonGroup.addToCart": "加入購物車",
+	"uni-goods-nav.buttonGroup.buyNow": "立即購買"
+}
+>>>>>>> 05dbcbb (更新主页面地图及组件)

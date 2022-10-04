@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "echarts": "/components/echarts/echarts"
+  },
+  "component": true
+}
