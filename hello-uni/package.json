@@ -16,7 +16,6 @@
         "url": ""
     },
     "devDependencies": {
-        "node-sass": "^4.14.0",
         "sass-loader": "^8.0.2"
     },
     "author": "uView",
@@ -27,5 +26,8 @@
             "前端组件",
             "通用组件"
         ]
+    },
+    "dependencies": {
+        "echarts": "4.8"
     }
 }

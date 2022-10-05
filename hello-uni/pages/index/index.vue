@@ -39,7 +39,7 @@
 					style="color:skyblue;font-size: 16px;font-weight: bold;display: inline-block;color: #4169E1;">全国疫情地图</text>
 			</view>
 			<view class="national-map">
-				<NationMap></NationMap>
+ 				<view id="map" style="background-attachment: fixed;background-size: cover;width: 100%;height:100%;margin: 0 auto"></view>
 			</view>
 			<!-- 二、本省疫情地图 -->
 			<view class="title">
@@ -49,8 +49,9 @@
 					style="color:skyblue;font-size: 16px;font-weight: bold;display: inline-block;color: #4169E1;">本省疫情地图</text>
 			</view>
 			<view class="national-map">
-				<NationMap></NationMap>
+ 				<view id="map2" style="background-attachment: fixed;background-size: cover;width: 100%;height:100%;margin: 0 auto"></view>
 			</view>
+			
 		</view>
 		<!-- 核酸点实时状态监测 -->
 		<view class="sampling-point">
@@ -93,9 +94,15 @@
 			</view>
 		</view>
 	</view>
+	
+	
 </template>
 <script>
-	import NationMap from "@/components/graphs/NationalMap.vue";
+	//import NationMap from "@/components/graphs/NationalMap.vue";
+	import * as echarts from 'echarts'
+	require('echarts/theme/macarons') // echarts theme
+	import 'echarts/map/js/china.js'; 
+	import jiangsuMap from 'echarts/map/json/province/jiangsu.json'
 	export default {
 		data() {
 			return {
@@ -158,7 +165,7 @@
 			this.getServerData()
 		},
 		components: {
-			NationMap
+			// NationMap
 		},
 		methods: {
 			getServerData() {
@@ -176,6 +183,208 @@
 					this.chartData=JSON.parse(JSON.stringify(res));
 				},500)
 			}
+		},
+		mounted() {
+		  var map2 = echarts.init(document.getElementById('map2'));
+		  var featuresCollection = { geoJSON: jiangsuMap };
+		  echarts.registerMap("JingSu", featuresCollection.geoJSON);
+		   var map = echarts.init(document.getElementById('map'));
+		   
+		   var COLORS=["#ffffff","#faebd2","#e9a188","#d56355","#bb3937","#772526","#480f10"];
+			var dataList=[//数据
+				{name:"南海诸岛",value:0},
+				{name: '北京', value: 97},
+				{name: '天津', value: 5},
+				{name: '上海', value: 30},
+				{name: '重庆', value: 2},
+				{name: '河北', value: 2},
+				{name: '河南', value: 1},
+				{name: '云南', value: 2},
+				{name: '辽宁', value: 4},
+				{name: '黑龙江', value: 13},
+				{name: '湖南', value: 0},
+				{name: '安徽', value: 0},
+				{name: '山东', value: 9},
+				{name: '新疆', value: 0},
+				{name: '江苏', value: 5},
+				{name: '浙江', value: 15},
+				{name: '江西', value: 1},
+				{name: '湖北', value: 8685},
+				{name: '广西', value: 3},
+				{name: '甘肃', value: 40},
+				{name: '山西', value: 1},
+				{name: '内蒙古', value: 1},
+				{name: '陕西', value: 7},
+				{name: '吉林', value: 0},
+				{name: '福建', value: 0},
+				{name: '贵州', value: 0},
+				{name: '广东', value: 49},
+				{name: '青海', value: 0},
+				{name: '西藏', value: 0},
+				{name: '四川', value: 17},
+				{name: '宁夏', value: 0},
+				{name: '海南', value: 1},
+				{name: '台湾', value: 54},
+				{name: '香港', value: 70},
+				{name: '澳门', value: 2}
+			]
+			var dataList2=[//数据
+				{name:"徐州",value:0},
+				{name: '连云港', value: 97},
+				{name: '宿迁', value: 5},
+				{name: '淮安', value: 30},
+				{name: '盐城', value: 2},
+				{name: '扬州', value: 2},
+				{name: '泰州', value: 1},
+				{name: '南通', value: 2},
+				{name: '南京', value: 4},
+				{name: '镇江', value: 13},
+				{name: '常州', value: 0},
+				{name: '无锡', value: 0},
+				{name: '苏州', value: 1000}
+			]
+		  
+			var option={//配置项
+				  tooltip: {//
+				  formatter:function(params,ticket, callback){
+						return params.name+'：'+params.value
+				  }//数据格式化
+				},
+				backgroundColor:'#eeeeee',//背景
+				visualMap: {
+					type: 'piecewise',
+					orient: 'horizontal',
+					left: 'left',
+					top: 'bottom',
+					textStyle:{
+						fontSize: 5,
+					},
+				pieces: [{
+					value: 0, color: COLORS[0]
+				}, {
+					min: 1, max: 9, color: COLORS[1]
+				}, {
+					min: 10, max: 99, color: COLORS[2]
+				}, {
+					min: 100, max: 499, color: COLORS[3]
+				}, {
+					min: 500, max: 999, color: COLORS[4]
+				}, {
+					min: 1000, max: 10000, color: COLORS[5]
+				}, {
+					min: 10000, color: COLORS[6]
+				}],
+				inRange: {
+					color:COLORS 
+				},
+				show:true
+				},
+				geo: {
+					map: 'china',
+					roam: false,
+					zoom:1.25,
+				label: {
+				normal: {
+					show: true,
+					fontSize:'6',
+					color: 'rgba(0,0,0,0.7)'
+				}
+				},
+				itemStyle: {
+					normal:{
+						borderColor: 'rgba(0, 0, 0, 0.2)'
+					},
+					emphasis:{
+						areaColor: '#F3B329',//⿏
+						shadowOffsetX: 0,
+						shadowOffsetY: 0,
+						shadowBlur: 20,
+						borderWidth: 0,
+						shadowColor: 'rgba(0, 0, 0, 0.5)'
+					}
+				}
+				},
+				series : [
+				{
+					name: '信息量',
+					type: 'map',
+					geoIndex: 0,
+					data:dataList//图表的数据
+				}
+				]
+			}
+			map.setOption(option);
+
+			var option2={//配置项
+				  tooltip: {//
+				  formatter:function(params,ticket, callback){
+				  return params.name+'：'+params.value
+				  }//数据格式化
+				},
+				backgroundColor:'#eeeeee',//背景
+				visualMap: {
+					type: 'piecewise',
+					orient: 'vertical',
+					left: 'left',
+					top: 'bottom',
+					textStyle:{
+						fontSize: 5,
+					},
+				pieces: [{
+					value: 0, color: COLORS[0]
+				}, {
+					min: 1, max: 9, color: COLORS[1]
+				}, {
+					min: 10, max: 99, color: COLORS[2]
+				}, {
+					min: 100, max: 499, color: COLORS[3]
+				}, {
+					min: 500, max: 999, color: COLORS[4]
+				}, {
+					min: 1000, max: 10000, color: COLORS[5]
+				}, {
+					min: 10000, color: COLORS[6]
+				}],
+				inRange: {
+					color:COLORS 
+				},
+				show:true
+				},
+				geo: {
+					map: 'JingSu',
+					roam: false,
+					zoom: 1.23,
+				label: {
+				normal: {
+					show: true,
+					fontSize:'6',
+					color: 'rgba(0,0,0,0.7)'
+				}
+				},
+				itemStyle: {
+					normal:{
+						borderColor: 'rgba(0, 0, 0, 0.2)'
+					},
+					emphasis:{
+						areaColor: '#F3B329',
+						shadowOffsetX: 0,
+						shadowOffsetY: 0,
+						shadowBlur: 20,
+						borderWidth: 0,
+						shadowColor: 'rgba(0, 0, 0, 0.5)'
+					}
+				}
+				},
+				series : [
+				{
+					name: '信息量',
+					type: 'map',
+					geoIndex: 0,
+					data:dataList2
+				}
+				]
+			}
+			map2.setOption(option2);
 		}
 	}
 </script>
