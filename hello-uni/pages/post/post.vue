@@ -8,24 +8,24 @@
 			<view class="classify-item">按地区</view>
 		</view> -->
 		<view class="post-list">
-			<view class="post-list-item" v-for="(post,index) in posts" :key="index">
-				<view class="item-title">{{post.post_title}}</view>
+			<view class="post-list-item" v-for="(post,index) in posts" :key="index" @click="goToDetail(post._id,post.title,post.introdution)">
+				<view class="item-title">{{post.title}}</view>
 				<view class="item-wrapper">
-					<image :src="post.post_picture" mode="widthFix"></image>
-					<view class="item-introdution">{{post.post_introdution}}</view>
+					<image :src="post.picture" mode="widthFix"></image>
+					<view class="item-introdution">{{post.introdution}}</view>
 				</view>
 				<view class="item-features">
 					<view class="feature browse">
 						<image src="../../static/imgs/postImg/icon-browse.png"></image>
-						<view class="num">{{post.post_browse_num}}</view>
+						<view class="num">{{post.browse_num}}</view>
 					</view>
 					<view class="feature praise">
 						<image src="../../static/imgs/postImg/icon-praise.png" ></image>
-						<view class="num">{{post.post_praise_num}}</view>
+						<view class="num">{{post.praise_num}}</view>
 					</view>
 					<view class="feature comment" url="../edit/edit">
 						<image src="../../static/imgs/postImg/icon-comment.png"></image>
-						<view class="num">{{post.post_comment_num}}</view>
+						<view class="num">{{post.comment_num}}</view>
 					</view>
 				</view>
 			</view>
@@ -41,44 +41,63 @@
 		data() {
 			return {
 				posts: [
-					{
-						post_id: 1,
-						post_title: '这是标题1',
-						post_picture: 'https://img1.imgtp.com/2022/09/30/eyqX5vbv.png',
-						post_introdution: '这是简介1这是简介1这是简介1这是简介1这是简介1这是简介1这是简介1这是简介1这是简介1这是简介1这是简介1这是简介1',
-						post_browse_num: 100,
-						post_praise_num: 20,
-						post_comment_num: 10,
-						post_content: '这是文章内容1这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容',
-						post_edit_time: '2022-9-30 12:00'	
-					},
-					{
-						post_id: 2,
-						post_title: '这是标题2',
-						post_picture: 'https://img1.imgtp.com/2022/09/30/vMJivLAv.png',
-						post_introdution: '这是简介2这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介',
-						post_browse_num: 70,
-						post_praise_num: 10,
-						post_comment_num: 10,
-						post_content: '这是文章内容2这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容',
-						post_edit_time: '2022-9-30 12:07'	
-					},
-					{
-						post_id: 2,
-						post_title: '这是标题3',
-						post_picture: 'https://img1.imgtp.com/2022/09/30/vMJivLAv.png',
-						post_introdution: '这是简介3这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介',
-						post_browse_num: 50,
-						post_praise_num: 25,
-						post_comment_num: 14,
-						post_content: '这是文章内容3这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容',
-						post_edit_time: '2022-9-30 12:10'	
-					}
+					// {
+					// 	post_id: 1,
+					// 	post_title: '这是标题1',
+					// 	post_picture: 'https://img1.imgtp.com/2022/09/30/eyqX5vbv.png',
+					// 	post_introdution: '这是简介1这是简介1这是简介1这是简介1这是简介1这是简介1这是简介1这是简介1这是简介1这是简介1这是简介1这是简介1',
+					// 	post_browse_num: 100,
+					// 	post_praise_num: 20,
+					// 	post_comment_num: 10,
+					// 	post_content: '这是文章内容1这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容',
+					// 	post_edit_time: '2022-9-30 12:00'	
+					// },
+					// {
+					// 	post_id: 2,
+					// 	post_title: '这是标题2',
+					// 	post_picture: 'https://img1.imgtp.com/2022/09/30/vMJivLAv.png',
+					// 	post_introdution: '这是简介2这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介',
+					// 	post_browse_num: 70,
+					// 	post_praise_num: 10,
+					// 	post_comment_num: 10,
+					// 	post_content: '这是文章内容2这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容',
+					// 	post_edit_time: '2022-9-30 12:07'	
+					// },
+					// {
+					// 	post_id: 2,
+					// 	post_title: '这是标题3',
+					// 	post_picture: 'https://img1.imgtp.com/2022/09/30/vMJivLAv.png',
+					// 	post_introdution: '这是简介3这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介这是简介',
+					// 	post_browse_num: 50,
+					// 	post_praise_num: 25,
+					// 	post_comment_num: 14,
+					// 	post_content: '这是文章内容3这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容',
+					// 	post_edit_time: '2022-9-30 12:10'	
+					// }
 				]
 			}
 		},
 		methods: {
-			
+			goToDetail(article_id,article_title,article_introduction) {
+				uni.navigateTo({
+					url:`/pages/post_detail/post_detail?id=${article_id}&title=${article_title}&introduction=${article_introduction}`
+				})
+			}
+		},
+		onLoad() {
+			uniCloud.callFunction({
+				name: "article",
+				data: {
+					type:"list"
+				},
+				success: (res) => {
+					// console.log(res.result.data);
+					this.posts = res.result.data
+				},
+				fail: (err) => {
+					console.log(err);
+				}
+			})
 		}
 	}
 </script>
@@ -131,7 +150,7 @@
 		.post-list {
 			width: 100%;
 			background-color: #fff;
-			padding: 0rpx 40rpx;
+			padding: 20rpx 40rpx;
 			box-sizing: border-box;
 			.post-list-item {
 				width: 100%;

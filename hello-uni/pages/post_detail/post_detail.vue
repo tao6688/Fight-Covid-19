@@ -7,10 +7,10 @@
 			<!-- 详情头部：标题+简介 -->
 			<view class="detail-top">
 				<view class="topic">
-					{{post.post_title}}
+					{{article.title}}
 				</view>
 				<view class="introdution">
-					{{post.post_introdution}}
+					{{article.introduction}}
 				</view>
 			</view>
 
@@ -25,7 +25,7 @@
 				</view>
 				<!-- 文字 -->
 				<view class="text-content">
-					{{post.post_content}}
+					{{article.content}}
 				</view>
 				<!-- 点赞评价的图标 -->
 				<view class="item-features">
@@ -74,6 +74,7 @@
 	export default {
 		data() {
 			return {
+				article_id: "",
 				post: {
 					post_id: 1,
 					post_name: "匿名用户",
@@ -127,8 +128,12 @@
 						}
 
 					]
+				},
+				article: {
+					title: "",
+					introduction: "",
+					content: ""
 				}
-
 			}
 		},
 		methods: {
@@ -145,6 +150,25 @@
 				this.post.post_comment.push(com);
 
 			}
+		},
+		onLoad(e) {
+			console.log(e);
+			this.article_id = e.id
+			this.article.title = e.title
+			this.article.introduction = e.introduction
+			uniCloud.callFunction({
+				name: "article",
+				data: {
+					type: "content",
+					id: this.article_id
+				},
+				success: (res) => {
+					this.article.content = res.result.data[0].content
+				},
+				fail: (err) => {
+					console.log(err);
+				}
+			})
 		}
 	}
 </script>
