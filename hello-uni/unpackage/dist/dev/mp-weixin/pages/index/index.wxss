@@ -16,7 +16,7 @@
 	height: 130px;
 	border-radius: 12px;
 	background: white;
-	margin: 0.2rem 0.3rem;
+	margin: 0.4rem 0.3rem;
 	padding: 4px 8px;
 }
 .title.data-v-57280228 {
@@ -53,39 +53,54 @@
 	border-radius: 12rpx;
 	background-color: #fffFFF;
 }
-.national-map.data-v-57280228{
+.national-map.data-v-57280228 {
 	display: flex;
 	margin: 10rpx 6rpx 6rpx 6rpx;
 	padding: 6rpx 4rpx;
 	border-radius: 12px;
 	margin-top: 12rpx;
 }
-.sampling-point.data-v-57280228{
+.sampling-point.data-v-57280228 {
 	display: flex;
 	flex-direction: column;
 	background-color: #fffFFF;
-	height: 360px;
+	/* 		height: 360px; */
 	margin: 0.2rem 0.3rem;
 	padding: 4rpx 8rpx;
 	border-radius: 12rpx;
 }
-.monitor-group.data-v-57280228{
+.monitor-group.data-v-57280228 {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-evenly;
 	flex-wrap: wrap;
-	height: 280px;
 }
-.monitor.data-v-57280228{
-	display:flex;
+.monitor.data-v-57280228 {
+	display: flex;
 	flex-direction: column;
-	border: 2px solid skyblue;
+	border: 2px solid grey;
+	background-color: #fffFFF;
+	border-radius: 12px;
 	margin-top: 12px;
 	width: 48%;
-	height: 46%;
+	height: 280rpx;
 }
-.monitor-video.data-v-57280228{
+.monitor-video.data-v-57280228 {
 	width: 98%;
 	margin: 6px auto;
+}
+.detection-progress.data-v-57280228 {
+	display: flex;
+	flex-direction: column;
+	background-color: #fffFFF;
+	margin: 0.4rem 0.3rem;
+	padding: 4rpx 8rpx;
+	border-radius: 12rpx;
+}
+.charts-box.data-v-57280228 {
+	display: flex;
+	height: 320rpx;
+	margin: 10rpx 6rpx;
+	width: 100%;
 }
 

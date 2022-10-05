@@ -1,0 +1,127 @@
+@charset "UTF-8";
+/* 水平间距 */
+/* 水平间距 */
+.post-detail {
+  height: 100%;
+  background-color: #f6f6f6;
+}
+.post-detail .detail-area {
+  width: 90%;
+  margin: 8px auto;
+}
+.post-detail .top-area {
+  width: 100%;
+  height: 320rpx;
+  background: url("https://img1.imgtp.com/2022/10/03/ychIeyli.jpg") no-repeat center;
+  background-size: 100% 100%;
+}
+.post-detail .topic {
+  font-size: 25px;
+  font-weight: 600;
+}
+.post-detail .introdution {
+  margin: 8px 0;
+}
+.post-detail .text {
+  font-size: 16px;
+}
+.post-detail .comment-list {
+  margin: 20px 0;
+}
+.post-detail .detail-top {
+  padding: 0 14px;
+  padding-top: 5px;
+  background-color: #fff;
+  border: 2rpx solid #BFBFBF;
+  border-radius: 20rpx;
+}
+.post-detail .detail-text {
+  margin: 20px 0;
+  padding: 10px 14px;
+  background-color: #fff;
+  border: 2rpx solid #BFBFBF;
+  border-radius: 20rpx;
+}
+.post-detail .detail-comment {
+  margin-top: 20px;
+  padding: 0 14px;
+  background-color: #fff;
+  border: 2rpx solid #BFBFBF;
+  border-radius: 20rpx;
+}
+.post-detail .input-comment {
+  position: relative;
+  border-collapse: collapse;
+}
+.post-detail .input-comment input {
+  width: 78%;
+  height: 84rpx;
+  background-color: #ffffff;
+  border: 2rpx solid #BFBFBF;
+  border-radius: 20rpx;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  font-size: 32rpx;
+  color: #767676;
+}
+.post-detail .input-comment button {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 20%;
+  height: 84rpx;
+  font-size: 15px;
+  border: 2rpx solid #BFBFBF;
+  border-radius: 20rpx;
+}
+.post-detail .text-top ._img {
+  float: left;
+  margin-right: 10rpx;
+  width: 50px;
+  height: 50px;
+}
+.post-detail .text-top .post-name {
+  padding-top: 10px;
+  font-size: 18px;
+  font-weight: 600;
+}
+.post-detail .text-top .comment {
+  margin-top: 10px;
+  margin-left: 35px;
+}
+.post-detail .detail-comment .text-top ._img {
+  width: 30px;
+  height: 30px;
+}
+.post-detail .detail-comment .text-top .post-name {
+  padding-top: 0;
+  left: 35px;
+  top: 3px;
+  font-size: 15px;
+  font-weight: 600;
+}
+.post-detail .item-features {
+  width: 60%;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row;
+  width: 100%;
+  height: 40rpx;
+}
+.post-detail .item-features .feature {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0 10rpx;
+}
+.post-detail .item-features .feature image {
+  width: 30rpx;
+  height: 30rpx;
+}
+.post-detail .item-features .feature .num {
+  font-size: 24rpx;
+}
+.post-detail .text-content {
+  margin-top: 27px;
+}
+

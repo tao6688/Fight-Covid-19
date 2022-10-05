@@ -2,15 +2,17 @@
   "pages": [
     "pages/index/index",
     "pages/post/post",
+    "pages/post_detail/post_detail",
     "pages/letter/letter",
     "pages/person/person",
-    "pages/edit/edit"
+    "pages/edit/edit",
+    "pages/store/store"
   ],
   "subPackages": [],
   "window": {
-    "navigationBarTextStyle": "black",
+    "navigationBarTextStyle": "white",
     "navigationBarTitleText": "uni-app",
-    "navigationBarBackgroundColor": "#4169E1",
+    "navigationBarBackgroundColor": "#38bfff",
     "backgroundColor": "#F8F8F8",
     "pageOrientation": "auto",
     "enablePullDownRefresh": true,
@@ -41,6 +43,12 @@
         "text": "私信"
       },
       {
+        "pagePath": "pages/store/store",
+        "iconPath": "static/tabbar/grid.png",
+        "selectedIconPath": "static/tabbar/grid_active.png",
+        "text": "商城"
+      },
+      {
         "pagePath": "pages/person/person",
         "iconPath": "static/tabbar/me.png",
         "selectedIconPath": "static/tabbar/me_active.png",
@@ -48,6 +56,5 @@
       }
     ]
   },
-  "usingComponents": {},
-  "sitemapLocation": "sitemap.json"
+  "usingComponents": {}
 }

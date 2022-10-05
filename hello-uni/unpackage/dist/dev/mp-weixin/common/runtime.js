@@ -55,6 +55,11 @@
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
 /******/
+/******/ 	// object to store loaded CSS chunks
+/******/ 	var installedCssChunks = {
+/******/ 		"common/runtime": 0
+/******/ 	}
+/******/
 /******/ 	// object to store loaded and loading chunks
 /******/ 	// undefined = chunk not loaded, null = chunk preloaded/prefetched
 /******/ 	// Promise = chunk loading, 0 = chunk loaded
@@ -63,6 +68,11 @@
 /******/ 	};
 /******/
 /******/ 	var deferredModules = [];
+/******/
+/******/ 	// script path function
+/******/ 	function jsonpScriptSrc(chunkId) {
+/******/ 		return __webpack_require__.p + "" + chunkId + ".js"
+/******/ 	}
 /******/
 /******/ 	// The require function
 /******/ 	function __webpack_require__(moduleId) {
@@ -88,7 +98,6 @@
 /******/ 		return module.exports;
 /******/ 	}
 /******/
-<<<<<<< HEAD
 /******/ 	// This file contains only the entry chunk.
 /******/ 	// The chunk loading function for additional chunks
 /******/ 	__webpack_require__.e = function requireEnsure(chunkId) {
@@ -96,11 +105,11 @@
 /******/
 /******/
 /******/ 		// mini-css-extract-plugin CSS loading
-/******/ 		var cssChunks = {"uni_modules/uni-link/components/uni-link/uni-link":1,"components/echarts/echarts":1};
+/******/ 		var cssChunks = {"uni_modules/qiun-data-charts/components/qiun-data-charts/qiun-data-charts":1,"uni_modules/uview-ui/components/u-upload/u-upload":1,"uni_modules/qiun-data-charts/components/qiun-error/qiun-error":1,"components/echarts/echarts":1,"uni_modules/uview-ui/components/u-icon/u-icon":1,"uni_modules/uview-ui/components/u-loading-icon/u-loading-icon":1,"uni_modules/qiun-data-charts/components/qiun-loading/loading1":1,"uni_modules/qiun-data-charts/components/qiun-loading/loading2":1,"uni_modules/qiun-data-charts/components/qiun-loading/loading3":1,"uni_modules/qiun-data-charts/components/qiun-loading/loading4":1,"uni_modules/qiun-data-charts/components/qiun-loading/loading5":1};
 /******/ 		if(installedCssChunks[chunkId]) promises.push(installedCssChunks[chunkId]);
 /******/ 		else if(installedCssChunks[chunkId] !== 0 && cssChunks[chunkId]) {
 /******/ 			promises.push(installedCssChunks[chunkId] = new Promise(function(resolve, reject) {
-/******/ 				var href = "" + ({"components/graphs/NationalMap":"components/graphs/NationalMap","uni_modules/uni-link/components/uni-link/uni-link":"uni_modules/uni-link/components/uni-link/uni-link","components/echarts/echarts":"components/echarts/echarts"}[chunkId]||chunkId) + ".wxss";
+/******/ 				var href = "" + ({"uni_modules/qiun-data-charts/components/qiun-data-charts/qiun-data-charts":"uni_modules/qiun-data-charts/components/qiun-data-charts/qiun-data-charts","components/graphs/NationalMap":"components/graphs/NationalMap","uni_modules/uview-ui/components/u-upload/u-upload":"uni_modules/uview-ui/components/u-upload/u-upload","uni_modules/qiun-data-charts/components/qiun-error/qiun-error":"uni_modules/qiun-data-charts/components/qiun-error/qiun-error","uni_modules/qiun-data-charts/components/qiun-loading/qiun-loading":"uni_modules/qiun-data-charts/components/qiun-loading/qiun-loading","components/echarts/echarts":"components/echarts/echarts","uni_modules/uview-ui/components/u-icon/u-icon":"uni_modules/uview-ui/components/u-icon/u-icon","uni_modules/uview-ui/components/u-loading-icon/u-loading-icon":"uni_modules/uview-ui/components/u-loading-icon/u-loading-icon","uni_modules/qiun-data-charts/components/qiun-loading/loading1":"uni_modules/qiun-data-charts/components/qiun-loading/loading1","uni_modules/qiun-data-charts/components/qiun-loading/loading2":"uni_modules/qiun-data-charts/components/qiun-loading/loading2","uni_modules/qiun-data-charts/components/qiun-loading/loading3":"uni_modules/qiun-data-charts/components/qiun-loading/loading3","uni_modules/qiun-data-charts/components/qiun-loading/loading4":"uni_modules/qiun-data-charts/components/qiun-loading/loading4","uni_modules/qiun-data-charts/components/qiun-loading/loading5":"uni_modules/qiun-data-charts/components/qiun-loading/loading5"}[chunkId]||chunkId) + ".wxss";
 /******/ 				var fullhref = __webpack_require__.p + href;
 /******/ 				var existingLinkTags = document.getElementsByTagName("link");
 /******/ 				for(var i = 0; i < existingLinkTags.length; i++) {
@@ -191,8 +200,6 @@
 /******/ 		}
 /******/ 		return Promise.all(promises);
 /******/ 	};
-=======
->>>>>>> 2889040b816a3f8cf8e1b72d81e1334515a99cb5
 /******/
 /******/ 	// expose the modules object (__webpack_modules__)
 /******/ 	__webpack_require__.m = modules;
@@ -245,6 +252,9 @@
 /******/
 /******/ 	// __webpack_public_path__
 /******/ 	__webpack_require__.p = "/";
+/******/
+/******/ 	// on error function for async loading
+/******/ 	__webpack_require__.oe = function(err) { console.error(err); throw err; };
 /******/
 /******/ 	var jsonpArray = global["webpackJsonp"] = global["webpackJsonp"] || [];
 /******/ 	var oldJsonpFunction = jsonpArray.push.bind(jsonpArray);
