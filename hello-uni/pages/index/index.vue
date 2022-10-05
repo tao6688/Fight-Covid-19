@@ -1,7 +1,7 @@
 <template>
 	<view class="container">
 		<!-- 顶部为标语栏，用于宣传防疫 -->
-		<img src="@/static/insertphoto/slogan.png" alt="防控疫情,人人有责" mode="widthFix" style="height: 120px;margin-bottom:8px;">
+		<!-- 	<img src="@/static/insertphoto/slogan2.png" alt="防控疫情,人人有责" mode="widthFix" style="height: 120px;margin-bottom:8px;"> -->
 		<!-- 社区疫情防控相关信息 -->
 		<view class="local-message">
 			<view class="title">
@@ -13,36 +13,40 @@
 			<view class="total_message">
 				<view class="detail_message">
 					<text style="font-size: 14px;">社区风险等级</text>
-					<text style="font-size: 18px;color: red;">高风险</text>
+					<text style="font-size: 18px;color: red;">{{RiskStatus}}</text>
 				</view>
 				<view class="detail_message">
 					<text style="font-size: 14px;">社区昨日新增</text>
-					<text style="font-size: 18px;color: red;">12例</text>
+					<text style="font-size: 18px;color: red;">{{NewCases}}例</text>
 				</view>
 				<view class="detail_message">
 					<text style="font-size: 14px;">社区风险单元</text>
-					<text style="font-size: 18px;color:red;">15栋1单元</text>
+					<text style="font-size: 18px;color:red;">{{RiskBuilding}}</text>
 				</view>
 				<view class="detail_message">
-					<text style="font-size: 14px;">社区当前状态</text>
-					<text style="font-size: 18px;color:red;">凭证进出</text>
+					<text style="font-size: 14px;">社区管控状态</text>
+					<text style="font-size: 18px;color:red;">{{ControlStatus}}</text>
 				</view>
 			</view>
 		</view>
 		<!-- 疫情地图可视化部分 -->
 		<view class="epidemic-information">
-		<!-- 一、全国疫情地图 -->
+			<!-- 一、全国疫情地图 -->
 			<view class="title">
-				<view style="height:20px;width: 6px;background-color:#4169E1;display: inline-block;matgin-right:12px;"></view>
-				<text style="color:skyblue;font-size: 16px;font-weight: bold;display: inline-block;color: #4169E1;">全国疫情地图</text>
+				<view style="height:20px;width: 6px;background-color:#4169E1;display: inline-block;matgin-right:12px;">
+				</view>
+				<text
+					style="color:skyblue;font-size: 16px;font-weight: bold;display: inline-block;color: #4169E1;">全国疫情地图</text>
 			</view>
 			<view class="national-map">
 				<NationMap></NationMap>
 			</view>
-		<!-- 二、本省疫情地图 -->
-            <view class="title">
-				<view style="height:20px;width: 6px;background-color:#4169E1;display: inline-block;matgin-right:12px;"></view>
-				<text style="color:skyblue;font-size: 16px;font-weight: bold;display: inline-block;color: #4169E1;">本省疫情地图</text>
+			<!-- 二、本省疫情地图 -->
+			<view class="title">
+				<view style="height:20px;width: 6px;background-color:#4169E1;display: inline-block;matgin-right:12px;">
+				</view>
+				<text
+					style="color:skyblue;font-size: 16px;font-weight: bold;display: inline-block;color: #4169E1;">本省疫情地图</text>
 			</view>
 			<view class="national-map">
 				<NationMap></NationMap>
@@ -51,31 +55,43 @@
 		<!-- 核酸点实时状态监测 -->
 		<view class="sampling-point">
 			<div class="title">
-			<view style="height:20px;width: 6px;background-color:#4169E1;display: inline-block;matgin-right:12px;"></view>
-			<text style="color:skyblue;font-size: 16px;font-weight: bold;display: inline-block;color: #4169E1;">社区核酸点状态监测</text>
+				<view style="height:20px;width: 6px;background-color:#4169E1;display: inline-block;matgin-right:12px;">
+				</view>
+				<text
+					style="color:skyblue;font-size: 16px;font-weight: bold;display: inline-block;color: #4169E1;">社区核酸点状态监测</text>
 			</div>
 			<view class="monitor-group">
-			<view class="monitor">
-				<text style="text-align: center;font-size: 14px;margin-top:8px;color: #4169E1;">检测点位1</text>
-				<video src="#" :controls="true" class="monitor-video"></video>
-			</view>	
-			<view class="monitor">
-				<text style="text-align: center;font-size: 14px;margin-top:8px;color: #4169E1;">检测点位2</text>
-				<video src="#" :controls="true" class="monitor-video"></video>
-			</view>
-			<view class="monitor">
-				<text style="text-align: center;font-size: 14px;margin-top:8px;color: #4169E1;">检测点位3</text>
-				<video src="#" :controls="true" class="monitor-video"></video>
-			</view>
-			<view class="monitor">
-				<text style="text-align: center;font-size: 14px;margin-top:8px;color: #4169E1;">检测点位4</text>
-				<video src="#" :controls="true" class="monitor-video"></video>
-			</view>				
+				<view class="monitor">
+					<text style="text-align: center;font-size: 14px;margin-top:8px;color:#4169E1;">检测点位1</text>
+					<video src="#" :controls="true" class="monitor-video"></video>
+				</view>
+				<view class="monitor">
+					<text style="text-align: center;font-size: 14px;margin-top:8px;color: #4169E1;">检测点位2</text>
+					<video src="#" :controls="true" class="monitor-video"></video>
+				</view>
+				<view class="monitor">
+					<text style="text-align: center;font-size: 14px;margin-top:8px;color:#4169E1;">检测点位3</text>
+					<video src="#" :controls="true" class="monitor-video"></video>
+				</view>
+				<view class="monitor">
+					<text style="text-align: center;font-size: 14px;margin-top:8px;color:#4169E1;">检测点位4</text>
+					<video src="#" :controls="true" class="monitor-video"></video>
+				</view>
 			</view>
 		</view>
-		<view class="intro">本项目已包含uni ui组件，无需import和注册，可直接使用。在代码区键入字母u，即可通过代码助手列出所有可用组件。光标置于组件名称处按F1，即可查看组件文档。</view>
-		<text class="intro">详见：</text>
-		<uni-link :href="href" :text="href"></uni-link>
+		<!-- 核酸点进度监测 -->
+		<view class="detection-progress">
+			<div class="title">
+				<view style="height:20px;width: 6px;background-color:#4169E1;display: inline-block;matgin-right:12px;">
+				</view>
+				<text
+					style="color:skyblue;font-size: 16px;font-weight: bold;display: inline-block;color: #4169E1;">当前核酸进度</text>
+			</div>
+			<view class="charts-box">
+				<qiun-data-charts type="arcbar" arcbar.type="cricle" :chartData="chartData" :opts="opts">
+				</qiun-data-charts>
+			</view>
+		</view>
 	</view>
 </template>
 <script>
@@ -83,13 +99,83 @@
 	export default {
 		data() {
 			return {
-				href: 'https://uniapp.dcloud.io/component/README?id=uniui',
-			};
+				RiskStatus: '高风险' || '中风险' || '低风险',
+				NewCases: 15,
+				// 风险单元应该设置成为数组，便于通过数组方法添加和删除操作
+				RiskBuilding: '15栋1单元',
+				ControlStatus: '静态管理' || '凭证进出' || '自由出入',
+				chartData: {},
+				opts: {
+					timing: "easeOut",
+					duration: 1000,
+					rotate: false,
+					rotateLock: false,
+					color: ["#1890FF", "#91CB74", "#FAC858", "#EE6666", "#73C0DE", "#3CA272", "#FC8452", "#9A60B4",
+						"#ea7ccc"
+					],
+					padding: undefined,
+					fontSize: 13,
+					fontColor: "#666666",
+					dataLabel: true,
+					dataPointShape: true,
+					dataPointShapeType: "solid",
+					touchMoveLimit: 60,
+					enableScroll: false,
+					enableMarkLine: false,
+					title: {
+						name: "核酸完成进度",
+						fontSize: 16,
+						color: "#00FF00",
+						offsetX: 0,
+						offsetY: 0
+					},
+					subtitle: {
+						name: "请耐心等候",
+						fontSize: 15,
+						color: "#666666",
+						offsetX: 0,
+						offsetY: 0
+					},
+					extra: {
+						arcbar: {
+							type: "circle",
+							width: 16,
+							backgroundColor: "#cbe6d0",
+							startAngle: 0.75,
+							endAngle: 0.25,
+							gap: 2,
+							direction: "cw",
+							lineCap: "round",
+							centerX: 0,
+							centerY: 0,
+							linearType: "custom"
+						}
+					}
+				},
+			}
+		},
+		onReady() {
+			this.getServerData()
 		},
 		components: {
 			NationMap
-        },
+		},
 		methods: {
+			getServerData() {
+				setTimeout(() => {
+					let res = {
+						series: [
+							{
+								name: '当前进度',
+								color: '#2fc25b',
+								// 当前返回值表示的是进度的小数位表示形式。
+								data: '0.75'
+							},
+						]
+					};
+					this.chartData=JSON.parse(JSON.stringify(res));
+				},500)
+			}
 		}
 	}
 </script>
@@ -113,7 +199,7 @@
 		height: 130px;
 		border-radius: 12px;
 		background: white;
-		margin: 0.2rem 0.3rem;
+		margin: 0.4rem 0.3rem;
 		padding: 4px 8px;
 	}
 
@@ -154,39 +240,63 @@
 		border-radius: 12rpx;
 		background-color: #fffFFF;
 	}
-	.national-map{
+
+	.national-map {
 		display: flex;
 		margin: 10rpx 6rpx 6rpx 6rpx;
 		padding: 6rpx 4rpx;
 		border-radius: 12px;
 		margin-top: 12rpx;
 	}
-	.sampling-point{
+
+	.sampling-point {
 		display: flex;
 		flex-direction: column;
 		background-color: #fffFFF;
-		height: 360px;
+		/* 		height: 360px; */
 		margin: 0.2rem 0.3rem;
 		padding: 4rpx 8rpx;
-		border-radius: 12rpx;	
+		border-radius: 12rpx;
 	}
-	.monitor-group{
+
+	.monitor-group {
 		display: flex;
 		flex-direction: row;
 		justify-content: space-evenly;
 		flex-wrap: wrap;
-		height: 280px;
 	}
-	.monitor{
-		display:flex;
+
+	.monitor {
+		display: flex;
 		flex-direction: column;
-		border: 2px solid skyblue;
+		border: 2px solid grey;
+		background-color: #fffFFF;
+		border-radius: 12px;
 		margin-top: 12px;
 		width: 48%;
-		height: 46%;
+		height: 280rpx;
+
 	}
-	.monitor-video{
+
+	.monitor-video {
 		width: 98%;
 		margin: 6px auto;
+	}
+
+	.detection-progress {
+		display: flex;
+		flex-direction: column;
+		background-color: #fffFFF;
+		margin: 0.4rem 0.3rem;
+		padding: 4rpx 8rpx;
+		border-radius: 12rpx;
+	}
+
+	.charts-box {
+		display: flex;
+		height: 320rpx;
+		margin: 10rpx 6rpx;
+		width: 100%;
+
 	}
 </style>
