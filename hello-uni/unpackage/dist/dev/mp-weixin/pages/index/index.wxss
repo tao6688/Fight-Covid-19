@@ -1,106 +1,105 @@
-
-.container.data-v-57280228 {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	/* 	height: 750px; */
-	width: 100vw;
-	background-color: #D3D3D3;
-	/* padding: 20px; */
-	font-size: 14rpx;
-	line-height: 24rpx;
+@charset "UTF-8";
+/* 水平间距 */
+/* 水平间距 */
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100vw;
+  background-color: #fffFFF;
+  font-size: 14rpx;
+  line-height: 24rpx;
 }
-.local-message.data-v-57280228 {
-	display: flex;
-	flex-direction: column;
-	height: 130px;
-	border-radius: 12px;
-	background: white;
-	margin: 0.4rem 0.3rem;
-	padding: 4px 8px;
+.container .local-message {
+  display: flex;
+  flex-direction: column;
+  border-radius: 12px;
+  margin: 16rpx 10rpx;
+  padding: 4px 8px;
 }
-.title.data-v-57280228 {
-	display: flex;
-	align-items: center;
-	color: #4169E1;
-	font-size: 20px;
-	font-family: "STKaiti";
-	margin-top: 12px;
+.container .local-message .title {
+  display: flex;
+  align-items: center;
+  color: #4169E1;
+  font-size: 24rpx;
+  font-family: "STKaiti";
+  margin-top: 16rpx;
+  margin-bottom: 12rpx;
 }
-.total_message.data-v-57280228 {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-evenly;
-	flex-wrap: wrap;
-	margin-top: 8px;
+.container .local-message .total_message {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  margin: 8rpx 8rpx 12rpx 8rpx;
 }
-.detail_message.data-v-57280228 {
-	display: flex;
-	flex-direction: column;
-	text-align: center;
-	justify-content: space-around;
-	width: 23%;
-	height: 160rpx;
-	border-radius: 16rpx;
-	color: white;
-	background-color: #00BFFF;
+.container .local-message .detail_message {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: space-around;
+  width: 23%;
+  min-height: 160rpx;
+  border-radius: 16rpx;
+  color: white;
+  background-color: #00BFFF;
 }
-.epidemic-information.data-v-57280228 {
-	display: flex;
-	flex-direction: column;
-	margin: 0.2rem 0.3rem;
-	padding: 4rpx 8rpx;
-	border-radius: 12rpx;
-	background-color: #fffFFF;
+.container .epidemic-information {
+  display: flex;
+  flex-direction: column;
+  margin: 8rpx 10rpx;
+  padding: 4rpx 8rpx;
+  border-radius: 12rpx;
 }
-.national-map.data-v-57280228 {
-	display: flex;
-	margin: 10rpx 6rpx 6rpx 6rpx;
-	padding: 6rpx 4rpx;
-	border-radius: 12px;
-	margin-top: 12rpx;
+.container .epidemic-information .national-map {
+  display: flex;
+  margin: 10rpx 6rpx 6rpx 6rpx;
+  padding: 6rpx 4rpx;
+  border-radius: 12px;
+  margin-top: 12rpx;
+  height: 320rpx;
 }
-.sampling-point.data-v-57280228 {
-	display: flex;
-	flex-direction: column;
-	background-color: #fffFFF;
-	/* 		height: 360px; */
-	margin: 0.2rem 0.3rem;
-	padding: 4rpx 8rpx;
-	border-radius: 12rpx;
+.container .sampling-point {
+  display: flex;
+  flex-direction: column;
+  background-color: #fffFFF;
+  margin: 8rpx 10rpx;
+  padding: 4rpx 8rpx;
 }
-.monitor-group.data-v-57280228 {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-evenly;
-	flex-wrap: wrap;
+.container .sampling-point .monitor-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
 }
-.monitor.data-v-57280228 {
-	display: flex;
-	flex-direction: column;
-	border: 2px solid grey;
-	background-color: #fffFFF;
-	border-radius: 12px;
-	margin-top: 12px;
-	width: 48%;
-	height: 280rpx;
+.container .sampling-point .monitor-group .monitor {
+  display: flex;
+  flex-direction: column;
+  border: 2rpx solid grey;
+  background-color: #fffFFF;
+  border-radius: 12px;
+  margin: 12rpx 6rpx 10rpx 6rpx;
+  padding: 5rpx;
+  width: 44%;
+  height: 280rpx;
 }
-.monitor-video.data-v-57280228 {
-	width: 98%;
-	margin: 6px auto;
+.monitor-video {
+  width: 98%;
+  min-height: 80rpx;
+  margin: 6rpx auto;
 }
-.detection-progress.data-v-57280228 {
-	display: flex;
-	flex-direction: column;
-	background-color: #fffFFF;
-	margin: 0.4rem 0.3rem;
-	padding: 4rpx 8rpx;
-	border-radius: 12rpx;
+.detection-progress {
+  display: flex;
+  flex-direction: column;
+  background-color: #fffFFF;
+  margin: 8rpx 10rpx;
+  padding: 4rpx 8rpx;
+  border-radius: 12rpx;
 }
-.charts-box.data-v-57280228 {
-	display: flex;
-	height: 320rpx;
-	margin: 10rpx 6rpx;
-	width: 100%;
+.charts-box {
+  display: flex;
+  height: 320rpx;
+  margin: 10rpx 6rpx;
+  width: 100%;
 }
 

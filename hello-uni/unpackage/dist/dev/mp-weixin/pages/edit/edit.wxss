@@ -43,6 +43,16 @@ page {
   box-sizing: border-box;
   font-size: 28rpx;
 }
+.edit-page .edit-area .edit-introduction textarea {
+  margin: auto;
+  width: 95%;
+  height: 200rpx;
+  background-color: #fff;
+  border-radius: 15rpx;
+  padding: 20rpx;
+  box-sizing: border-box;
+  font-size: 28rpx;
+}
 .edit-page .edit-area .post-btn {
   display: flex;
   justify-content: center;
