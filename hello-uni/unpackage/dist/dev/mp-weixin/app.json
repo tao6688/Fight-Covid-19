@@ -2,6 +2,7 @@
   "pages": [
     "pages/index/index",
     "pages/post/post",
+<<<<<<< HEAD
     "pages/post_detail/post_detail",
     "pages/letter/letter",
     "pages/person/person",
@@ -13,6 +14,17 @@
     "navigationBarTextStyle": "white",
     "navigationBarTitleText": "uni-app",
     "navigationBarBackgroundColor": "#38bfff",
+=======
+    "pages/letter/letter",
+    "pages/person/person",
+    "pages/edit/edit"
+  ],
+  "subPackages": [],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "uni-app",
+    "navigationBarBackgroundColor": "#4169E1",
+>>>>>>> 499acd7 (更新中国地图及组件)
     "backgroundColor": "#F8F8F8",
     "pageOrientation": "auto",
     "enablePullDownRefresh": true,
@@ -43,12 +55,15 @@
         "text": "私信"
       },
       {
+<<<<<<< HEAD
         "pagePath": "pages/store/store",
         "iconPath": "static/tabbar/grid.png",
         "selectedIconPath": "static/tabbar/grid_active.png",
         "text": "商城"
       },
       {
+=======
+>>>>>>> 499acd7 (更新中国地图及组件)
         "pagePath": "pages/person/person",
         "iconPath": "static/tabbar/me.png",
         "selectedIconPath": "static/tabbar/me_active.png",
@@ -56,5 +71,10 @@
       }
     ]
   },
+<<<<<<< HEAD
   "usingComponents": {}
+=======
+  "usingComponents": {},
+  "sitemapLocation": "sitemap.json"
+>>>>>>> 499acd7 (更新中国地图及组件)
 }

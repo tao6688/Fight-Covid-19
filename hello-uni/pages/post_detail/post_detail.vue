@@ -7,10 +7,17 @@
 			<!-- 详情头部：标题+简介 -->
 			<view class="detail-top">
 				<view class="topic">
+<<<<<<< HEAD
 					{{article.title}}
 				</view>
 				<view class="introdution">
 					{{article.introduction}}
+=======
+					{{post.post_title}}
+				</view>
+				<view class="introdution">
+					{{post.post_introdution}}
+>>>>>>> 499acd7 (更新中国地图及组件)
 				</view>
 			</view>
 
@@ -25,7 +32,11 @@
 				</view>
 				<!-- 文字 -->
 				<view class="text-content">
+<<<<<<< HEAD
 					{{article.content}}
+=======
+					{{post.post_content}}
+>>>>>>> 499acd7 (更新中国地图及组件)
 				</view>
 				<!-- 点赞评价的图标 -->
 				<view class="item-features">
@@ -74,7 +85,10 @@
 	export default {
 		data() {
 			return {
+<<<<<<< HEAD
 				article_id: "",
+=======
+>>>>>>> 499acd7 (更新中国地图及组件)
 				post: {
 					post_id: 1,
 					post_name: "匿名用户",
@@ -128,12 +142,17 @@
 						}
 
 					]
+<<<<<<< HEAD
 				},
 				article: {
 					title: "",
 					introduction: "",
 					content: ""
 				}
+=======
+				}
+
+>>>>>>> 499acd7 (更新中国地图及组件)
 			}
 		},
 		methods: {
@@ -150,6 +169,7 @@
 				this.post.post_comment.push(com);
 
 			}
+<<<<<<< HEAD
 		},
 		onLoad(e) {
 			console.log(e);
@@ -169,6 +189,8 @@
 					console.log(err);
 				}
 			})
+=======
+>>>>>>> 499acd7 (更新中国地图及组件)
 		}
 	}
 </script>

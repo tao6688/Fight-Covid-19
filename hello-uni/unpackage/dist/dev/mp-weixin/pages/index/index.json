@@ -1,6 +1,13 @@
 {
+<<<<<<< HEAD
   "navigationBarTitleText": "疫情信息",
   "usingComponents": {
     "qiun-data-charts": "/uni_modules/qiun-data-charts/components/qiun-data-charts/qiun-data-charts"
+=======
+  "navigationBarTitleText": "当前疫情动态",
+  "usingComponents": {
+    "uni-link": "/uni_modules/uni-link/components/uni-link/uni-link",
+    "nation-map": "/components/graphs/NationalMap"
+>>>>>>> 499acd7 (更新中国地图及组件)
   }
 }

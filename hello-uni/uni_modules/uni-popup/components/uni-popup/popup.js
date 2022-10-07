@@ -1,9 +1,25 @@
 
+<<<<<<< HEAD
 export default {
 	data() {
 		return {
 			
 		}
+=======
+<<<<<<< HEAD
+export default {
+	data() {
+		return {
+			
+		}
+=======
+export default {
+	data() {
+		return {
+			
+		}
+>>>>>>> 05dbcbb (更新主页面地图及组件)
+>>>>>>> 499acd7 (更新中国地图及组件)
 	},
 	created(){
 		this.popup = this.getParent()
@@ -22,5 +38,15 @@ export default {
 			}
 			return parent;
 		},
+<<<<<<< HEAD
 	}
 }
+=======
+<<<<<<< HEAD
+	}
+}
+=======
+	}
+}
+>>>>>>> 05dbcbb (更新主页面地图及组件)
+>>>>>>> 499acd7 (更新中国地图及组件)

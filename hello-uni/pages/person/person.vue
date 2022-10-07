@@ -1,4 +1,5 @@
 <template>
+<<<<<<< HEAD
 	<view class="container">
 		<view class="content-item">
 			<image src="/static/personal/bg.jpg" style="width: 100%;"></image>
@@ -57,6 +58,12 @@
 </template>
 
 
+=======
+	<view>
+		个人中心
+	</view>
+</template>
+>>>>>>> 499acd7 (更新中国地图及组件)
 
 <script>
 	export default {
@@ -72,6 +79,7 @@
 </script>
 
 <style>
+<<<<<<< HEAD
 	.container{
 	width: 100%;
 	}
@@ -128,3 +136,7 @@
 	}
 
 </style>
+=======
+
+</style>
+>>>>>>> 499acd7 (更新中国地图及组件)

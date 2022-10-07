@@ -18,7 +18,11 @@
         }
     },
     "compileType": "miniprogram",
+<<<<<<< HEAD
     "libVersion": "2.26.1",
+=======
+    "libVersion": "2.26.2",
+>>>>>>> 499acd7 (更新中国地图及组件)
     "appid": "touristappid",
     "projectname": "hello-uni",
     "condition": {

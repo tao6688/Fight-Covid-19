@@ -16,16 +16,38 @@
 在 ``template`` 中使用组件
 
 ```html
+<<<<<<< HEAD
 <uni-breadcrumb separator="/">
+=======
+<<<<<<< HEAD
+<uni-breadcrumb separator="/">
+=======
+<uni-breadcrumb separator="/">
+>>>>>>> 05dbcbb (更新主页面地图及组件)
+>>>>>>> 499acd7 (更新中国地图及组件)
 	<uni-breadcrumb-item v-for="(route,index) in routes" :key="index" :to="route.to">{{route.name}}</uni-breadcrumb-item>
 </uni-breadcrumb>
 ```
 
 ```js
+<<<<<<< HEAD
 export default {
 		name: "uni-stat-breadcrumb",
 		data() {
 			return {
+=======
+<<<<<<< HEAD
+export default {
+		name: "uni-stat-breadcrumb",
+		data() {
+			return {
+=======
+export default {
+		name: "uni-stat-breadcrumb",
+		data() {
+			return {
+>>>>>>> 05dbcbb (更新主页面地图及组件)
+>>>>>>> 499acd7 (更新中国地图及组件)
 				routes: [{
 					to: '/A',
 					name: 'A页面'
@@ -35,9 +57,21 @@ export default {
 				}, {
 					to: '/C',
 					name: 'C页面'
+<<<<<<< HEAD
 				}]
 			};
 		}
+=======
+<<<<<<< HEAD
+				}]
+			};
+		}
+=======
+				}]
+			};
+		}
+>>>>>>> 05dbcbb (更新主页面地图及组件)
+>>>>>>> 499acd7 (更新中国地图及组件)
 	}
 ```
 

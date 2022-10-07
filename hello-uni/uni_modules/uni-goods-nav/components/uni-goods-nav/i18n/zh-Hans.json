@@ -1,6 +1,24 @@
+<<<<<<< HEAD
 {
 	"uni-goods-nav.options.shop": "店铺",
 	"uni-goods-nav.options.cart": "购物车",
 	"uni-goods-nav.buttonGroup.addToCart": "加入购物车",
 	"uni-goods-nav.buttonGroup.buyNow": "立即购买"
 }
+=======
+<<<<<<< HEAD
+{
+	"uni-goods-nav.options.shop": "店铺",
+	"uni-goods-nav.options.cart": "购物车",
+	"uni-goods-nav.buttonGroup.addToCart": "加入购物车",
+	"uni-goods-nav.buttonGroup.buyNow": "立即购买"
+}
+=======
+{
+	"uni-goods-nav.options.shop": "店铺",
+	"uni-goods-nav.options.cart": "购物车",
+	"uni-goods-nav.buttonGroup.addToCart": "加入购物车",
+	"uni-goods-nav.buttonGroup.buyNow": "立即购买"
+}
+>>>>>>> 05dbcbb (更新主页面地图及组件)
+>>>>>>> 499acd7 (更新中国地图及组件)

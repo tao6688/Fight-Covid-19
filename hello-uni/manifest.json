@@ -1,6 +1,10 @@
 {
     "name" : "hello-uni",
+<<<<<<< HEAD
     "appid" : "__UNI__5B93251",
+=======
+    "appid" : "",
+>>>>>>> 499acd7 (更新中国地图及组件)
     "description" : "",
     "versionName" : "1.0.0",
     "versionCode" : "100",

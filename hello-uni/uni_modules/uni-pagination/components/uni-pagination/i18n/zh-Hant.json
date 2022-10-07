@@ -1,5 +1,19 @@
+<<<<<<< HEAD
 {
 	"uni-pagination.prevText": "上一頁",
 	"uni-pagination.nextText": "下一頁",
 	"uni-pagination.piecePerPage": "條/頁"
+=======
+<<<<<<< HEAD
+{
+	"uni-pagination.prevText": "上一頁",
+	"uni-pagination.nextText": "下一頁",
+	"uni-pagination.piecePerPage": "條/頁"
+=======
+{
+	"uni-pagination.prevText": "上一頁",
+	"uni-pagination.nextText": "下一頁",
+	"uni-pagination.piecePerPage": "條/頁"
+>>>>>>> 05dbcbb (更新主页面地图及组件)
+>>>>>>> 499acd7 (更新中国地图及组件)
 }

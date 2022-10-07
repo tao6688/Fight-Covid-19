@@ -18,10 +18,13 @@
 					<view class="outline">请添加标题</view>
 					<input type="text" placeholder="请添加标题" />
 				</view>
+<<<<<<< HEAD
 				<view class="edit-item edit-introduction">
 					<view class="outline">请添加帖子简介</view>
 					<textarea name="" id="" cols="30" rows="10" placeholder="请添加帖子简介"></textarea>
 				</view>
+=======
+>>>>>>> 499acd7 (更新中国地图及组件)
 				<view class="edit-item edit-content">
 					<view class="outline">请编辑帖子内容</view>
 					<textarea name="" id="" cols="30" rows="10" placeholder="请编辑帖子内容"></textarea>
@@ -130,6 +133,7 @@
 					font-size: 28rpx;
 				}
 			}
+<<<<<<< HEAD
 			.edit-introduction {
 				textarea {
 					margin: auto;
@@ -142,6 +146,8 @@
 					font-size: 28rpx;
 				}
 			}
+=======
+>>>>>>> 499acd7 (更新中国地图及组件)
 			.post-btn {
 				display: flex;
 				justify-content: center;

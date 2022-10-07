@@ -1,6 +1,22 @@
+<<<<<<< HEAD
 {
 	"uni-countdown.day": "day",
 	"uni-countdown.h": "h",
 	"uni-countdown.m": "m",
 	"uni-countdown.s": "s"
+=======
+<<<<<<< HEAD
+{
+	"uni-countdown.day": "day",
+	"uni-countdown.h": "h",
+	"uni-countdown.m": "m",
+	"uni-countdown.s": "s"
+=======
+{
+	"uni-countdown.day": "day",
+	"uni-countdown.h": "h",
+	"uni-countdown.m": "m",
+	"uni-countdown.s": "s"
+>>>>>>> 05dbcbb (更新主页面地图及组件)
+>>>>>>> 499acd7 (更新中国地图及组件)
 }

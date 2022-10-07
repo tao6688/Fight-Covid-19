@@ -1,7 +1,11 @@
 {
   "navigationBarTitleText": "uni-app",
   "enablePullDownRefresh": false,
+<<<<<<< HEAD
   "usingComponents": {
     "uni-icons": "/uni_modules/uni-icons/components/uni-icons/uni-icons"
   }
+=======
+  "usingComponents": {}
+>>>>>>> 499acd7 (更新中国地图及组件)
 }

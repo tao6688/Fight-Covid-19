@@ -14,8 +14,18 @@ $divide-line-color : #e5e5e5;
 $avatar-width : 45px ;
 
 // 头像边框
+<<<<<<< HEAD
 $avatar-border-radius: 5px;
 $avatar-border-color: #eee;
+=======
+<<<<<<< HEAD
+$avatar-border-radius: 5px;
+$avatar-border-color: #eee;
+=======
+$avatar-border-radius: 5px;
+$avatar-border-color: #eee;
+>>>>>>> 05dbcbb (更新主页面地图及组件)
+>>>>>>> 499acd7 (更新中国地图及组件)
 $avatar-border-width: 1px;
 
 // 标题文字样式
@@ -36,11 +46,27 @@ $right-text-weight : normal;
 // 角标样式
 // nvue 页面不支持修改圆点位置以及大小
 // 角标在左侧时，角标的位置，默认为 0 ，负数左/下移动，正数右/上移动
+<<<<<<< HEAD
 $badge-left: 0px;
 $badge-top: 0px;
 
 // 显示圆点时，圆点大小
 $dot-width: 10px;
+=======
+<<<<<<< HEAD
+$badge-left: 0px;
+$badge-top: 0px;
+
+// 显示圆点时，圆点大小
+$dot-width: 10px;
+=======
+$badge-left: 0px;
+$badge-top: 0px;
+
+// 显示圆点时，圆点大小
+$dot-width: 10px;
+>>>>>>> 05dbcbb (更新主页面地图及组件)
+>>>>>>> 499acd7 (更新中国地图及组件)
 $dot-height: 10px;
 
 // 显示角标时，角标大小和字体大小

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @charset "UTF-8";
 /* 水平间距 */
 /* 水平间距 */
@@ -101,5 +102,96 @@
   height: 320rpx;
   margin: 10rpx 6rpx;
   width: 100%;
+=======
+
+.container.data-v-57280228 {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	/* 	height: 750px; */
+	width: 100vw;
+	background-color: #D3D3D3;
+	/* padding: 20px; */
+	font-size: 14rpx;
+	line-height: 24rpx;
+}
+.local-message.data-v-57280228 {
+	display: flex;
+	flex-direction: column;
+	height: 130px;
+	border-radius: 12px;
+	background: white;
+	margin: 0.2rem 0.3rem;
+	padding: 4px 8px;
+}
+.title.data-v-57280228 {
+	display: flex;
+	align-items: center;
+	color: #4169E1;
+	font-size: 20px;
+	font-family: "STKaiti";
+	margin-top: 12px;
+}
+.total_message.data-v-57280228 {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	flex-wrap: wrap;
+	margin-top: 8px;
+}
+.detail_message.data-v-57280228 {
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	justify-content: space-around;
+	width: 23%;
+	height: 160rpx;
+	border-radius: 16rpx;
+	color: white;
+	background-color: #00BFFF;
+}
+.epidemic-information.data-v-57280228 {
+	display: flex;
+	flex-direction: column;
+	margin: 0.2rem 0.3rem;
+	padding: 4rpx 8rpx;
+	border-radius: 12rpx;
+	background-color: #fffFFF;
+}
+.national-map.data-v-57280228{
+	display: flex;
+	margin: 10rpx 6rpx 6rpx 6rpx;
+	padding: 6rpx 4rpx;
+	border-radius: 12px;
+	margin-top: 12rpx;
+}
+.sampling-point.data-v-57280228{
+	display: flex;
+	flex-direction: column;
+	background-color: #fffFFF;
+	height: 360px;
+	margin: 0.2rem 0.3rem;
+	padding: 4rpx 8rpx;
+	border-radius: 12rpx;
+}
+.monitor-group.data-v-57280228{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	flex-wrap: wrap;
+	height: 280px;
+}
+.monitor.data-v-57280228{
+	display:flex;
+	flex-direction: column;
+	border: 2px solid skyblue;
+	margin-top: 12px;
+	width: 48%;
+	height: 46%;
+}
+.monitor-video.data-v-57280228{
+	width: 98%;
+	margin: 6px auto;
+>>>>>>> 499acd7 (更新中国地图及组件)
 }
 

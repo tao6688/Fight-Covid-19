@@ -1,7 +1,11 @@
 {
   "navigationBarTitleText": "发布帖子",
   "enablePullDownRefresh": false,
+<<<<<<< HEAD
   "usingComponents": {
     "u-upload": "/uni_modules/uview-ui/components/u-upload/u-upload"
   }
+=======
+  "usingComponents": {}
+>>>>>>> 499acd7 (更新中国地图及组件)
 }
