@@ -29,7 +29,7 @@
             "path" : "pages/letter/letter",
             "style" :                                                                                    
             {
-                "navigationBarTitleText": "uni-app",
+                "navigationBarTitleText": "私信",
                 "enablePullDownRefresh": false
             }
             
@@ -37,7 +37,7 @@
             "path" : "pages/person/person",
             "style" :                                                                                    
             {
-                "navigationBarTitleText": "uni-app",
+                "navigationBarTitleText": "个人中心",
                 "enablePullDownRefresh": false
             }
             
@@ -70,6 +70,33 @@
         //     }
             
         // }
+        ,{
+            "path" : "pages/person/about/about",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "关于",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/person/feedback/feedback",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "问题与反馈",
+                "enablePullDownRefresh": false
+            }
+            
+        },
+		{
+		    "path" : "pages/person/settings/settings",
+		    "style" :                                                                                    
+		    {
+		        "navigationBarTitleText": "设置",
+		        "enablePullDownRefresh": false
+		    }
+		    
+		}
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "white",
