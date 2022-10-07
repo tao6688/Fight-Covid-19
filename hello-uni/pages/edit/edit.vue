@@ -3,7 +3,7 @@
 		<view class="top-area"></view>
 		<view class="edit-area">
 			<form action="">
-				<view class="edit-item upload-picture">
+				<!-- <view class="edit-item upload-picture">
 					<view class="outline">请上传图片</view>
 					<u-upload
 							:fileList="fileList1"
@@ -13,20 +13,23 @@
 							multiple
 							:maxCount="10"
 						></u-upload>
-				</view>
+				</view> -->
 				<view class="edit-item edit-title">
 					<view class="outline">请添加标题</view>
-					<input type="text" placeholder="请添加标题" />
+					<input type="text" placeholder="请添加标题" v-model="titleVal" @blur="titleInputValidate" />
+					<view class="error-tip" v-if="titleError">标题不能为空</view>
 				</view>
 				<view class="edit-item edit-introduction">
 					<view class="outline">请添加帖子简介</view>
-					<textarea name="" id="" cols="30" rows="10" placeholder="请添加帖子简介"></textarea>
+					<textarea name="" id="" cols="30" rows="10" placeholder="请添加帖子简介" v-model="introductionVal" @blur="introInputValidate"></textarea>
+					<view class="error-tip" v-if="introductionErr">标题不能为空</view>
 				</view>
 				<view class="edit-item edit-content">
 					<view class="outline">请编辑帖子内容</view>
-					<textarea name="" id="" cols="30" rows="10" placeholder="请编辑帖子内容"></textarea>
+					<textarea name="" id="" cols="30" rows="10" placeholder="请编辑帖子内容" v-model="contentVal" @blur="contentInputValidate"></textarea>
+					<view class="error-tip" v-if="contentErr">标题不能为空</view>
 				</view>
-				<button class="post-btn">发布</button>
+				<button class="post-btn" @click="postEvent">发布</button>
 			</form>
 		</view>
 	</view>
@@ -36,6 +39,12 @@
 		data() {
 			return {
 				fileList1: [],
+				titleVal: "",
+				introductionVal: "",
+				contentVal: "",
+				titleError: false,
+				introductionErr: false,
+				contentErr: false
 			}
 		},
 		methods:{
@@ -83,6 +92,75 @@
 					});
 				})
 			},
+			titleInputValidate() {
+				if(this.titleVal.trim() === '') {
+					this.titleError = true
+				} else {
+					this.titleError = false
+				}
+			},
+			introInputValidate() {
+				if(this.introductionVal.trim() === '') {
+					this.introductionErr = true
+				} else {
+					this.introductionErr = false
+				}
+			},
+			contentInputValidate() {
+				if(this.contentVal.trim() === '') {
+					this.contentErr = true
+				} else {
+					this.contentErr = false
+				}
+			},
+			postEvent() {
+				if(this.titleVal.trim() === '') {
+					this.titleError = true
+				} else {
+					this.titleError = false
+				}
+				if(this.introductionVal.trim() === '') {
+					this.introductionErr = true
+				} else {
+					this.introductionErr = false
+				}
+				if(this.contentVal.trim() === '') {
+					this.contentErr = true
+				} else {
+					this.contentErr = false
+				}
+				if(this.titleError === false && this.introductionErr === false && this.contentErr === false) {
+					uniCloud.callFunction({
+						name: "article",
+						data: {
+							type:"add",
+							picture: "https://img1.imgtp.com/2022/09/30/eyqX5vbv.png",
+							title: this.titleVal,
+							introduction: this.introductionVal,
+							content: this.contentVal,
+							browse_num: "0",
+							comment_num: "0",
+							praise_num: "0"
+						},
+						success: (res) => {
+							uni.showToast({
+								title: "发布成功",
+								icon: 'success',
+								duration: 1000
+							})
+							setTimeout(()=>{
+								uni.switchTab({
+									url: "/pages/post/post"
+								})
+							},2000)
+						},
+						fail: (err) => {
+							console.log(err);
+						}
+					})
+				}
+				
+			}
 		}
 
 	}
@@ -111,6 +189,7 @@
 				}
 				input {
 					margin: auto;
+					margin-bottom: 10rpx;
 					width: 95%;
 					height: 80rpx;
 					background-color: #fff;
@@ -128,6 +207,11 @@
 					padding: 20rpx;
 					box-sizing: border-box;
 					font-size: 28rpx;
+				}
+				.error-tip {
+					margin-left: 36rpx;
+					font-size: 26rpx;
+					color: darkred;
 				}
 			}
 			.edit-introduction {

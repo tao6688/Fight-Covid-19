@@ -7,10 +7,10 @@
 			<!-- 详情头部：标题+简介 -->
 			<view class="detail-top">
 				<view class="topic">
-					{{article.title}}
+					{{posts.title}}
 				</view>
 				<view class="introdution">
-					{{article.introduction}}
+					{{posts.introduction}}
 				</view>
 			</view>
 
@@ -25,7 +25,7 @@
 				</view>
 				<!-- 文字 -->
 				<view class="text-content">
-					{{article.content}}
+					{{posts.content}}
 				</view>
 				<!-- 点赞评价的图标 -->
 				<view class="item-features">
@@ -129,11 +129,7 @@
 
 					]
 				},
-				article: {
-					title: "",
-					introduction: "",
-					content: ""
-				}
+				posts: {}
 			}
 		},
 		methods: {
@@ -152,18 +148,15 @@
 			}
 		},
 		onLoad(e) {
-			console.log(e);
 			this.article_id = e.id
-			this.article.title = e.title
-			this.article.introduction = e.introduction
 			uniCloud.callFunction({
 				name: "article",
 				data: {
-					type: "content",
+					type: "detail",
 					id: this.article_id
 				},
 				success: (res) => {
-					this.article.content = res.result.data[0].content
+					this.posts = res.result.data[0]
 				},
 				fail: (err) => {
 					console.log(err);

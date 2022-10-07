@@ -3,20 +3,25 @@
 // 获取数据库的引用
 const db = uniCloud.database()
 // 获取集合的引用
-const articleCollection = db.collection('article')
-const contentCollection = db.collection('content')
+const postCollection = db.collection('post')
+const commentCollection = db.collection('comment')
 exports.main = async (event, context) => {
 	switch(event.type) {
 		case 'list':
-		return await articleCollection.get()
+		return await postCollection.get()
 		break;
-		case 'content':
+		case 'detail':
 		let article_id = event.id
-		let res = await contentCollection.where({
-			article_id
+		let res = await postCollection.where({
+			_id: article_id
 		}).get()
 		return res
 		break;
+		case 'add':
+		let {picture,title,introduction,content,browse_num,comment_num,praise_num} = event
+		return await postCollection.add({
+			picture,title,introduction,content,browse_num,comment_num,praise_num
+		})
+		
 	}
-	
 };

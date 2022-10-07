@@ -8,11 +8,11 @@
 			<view class="classify-item">按地区</view>
 		</view> -->
 		<view class="post-list">
-			<view class="post-list-item" v-for="(post,index) in posts" :key="index" @click="goToDetail(post._id,post.title,post.introdution)">
+			<view class="post-list-item" v-for="(post,index) in posts" :key="index" @click="goToDetail(post._id)">
 				<view class="item-title">{{post.title}}</view>
 				<view class="item-wrapper">
 					<image :src="post.picture" mode="widthFix"></image>
-					<view class="item-introdution">{{post.introdution}}</view>
+					<view class="item-introdution">{{post.introduction}}</view>
 				</view>
 				<view class="item-features">
 					<view class="feature browse">
@@ -78,20 +78,19 @@
 			}
 		},
 		methods: {
-			goToDetail(article_id,article_title,article_introduction) {
+			goToDetail(article_id) {
 				uni.navigateTo({
-					url:`/pages/post_detail/post_detail?id=${article_id}&title=${article_title}&introduction=${article_introduction}`
+					url:`/pages/post_detail/post_detail?id=${article_id}`
 				})
 			}
 		},
-		onLoad() {
+		onShow() {
 			uniCloud.callFunction({
 				name: "article",
 				data: {
 					type:"list"
 				},
 				success: (res) => {
-					// console.log(res.result.data);
 					this.posts = res.result.data
 				},
 				fail: (err) => {
