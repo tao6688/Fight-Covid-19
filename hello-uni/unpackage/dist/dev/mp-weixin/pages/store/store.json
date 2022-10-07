@@ -1,5 +1,7 @@
 {
-  "navigationBarTitleText": "",
+  "navigationBarTitleText": "商城",
   "enablePullDownRefresh": false,
-  "usingComponents": {}
+  "usingComponents": {
+    "index": "/components/index/index"
+  }
 }
