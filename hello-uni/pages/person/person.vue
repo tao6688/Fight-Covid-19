@@ -1,11 +1,11 @@
 <template>
 	<view class="center">
-		<uni-sign-in ref="signIn"></uni-sign-in>
-		<view class="userInfo">
-			<!-- <image v-else class="logo-img" src="@/static/personal/bg.jpg"></image> -->
+		<view class="userInfo" @click.capture="toUserInfo">
+			<cloud-image width="150rpx" height="150rpx" v-if="hasLogin && userInfo.avatar_file && userInfo.avatar_file.url"></cloud-image>
+			<image v-else class="logo-img" src="@/static/uni-center/defaultAvatarUrl.png"></image>
 			<view class="logo-title">
-				<text class="uer-name"></text>
-				<text class="uer-name"></text>
+				<text class="uer-name" v-if="hasLogin">{{userInfo.nickname||userInfo.username||userInfo.mobile}}</text>
+				<text class="uer-name">您好，住户</text>
 			</view>
 		</view>
 		<uni-grid class="grid" :column="4" :showBorder="false" :square="true">
@@ -31,25 +31,25 @@
 
 <script>
 	const db = uniCloud.database();
-	
+	import {store, mutations} from '@/uni_modules/uni-id-pages/common/store.js'
 	export default {
 		data() {
 			return {
 				gridList: [
 					{
-						value: '￥128',
+						value: 'XX',
 						name: '余额'
 					},
 					{
-						value: '0',
+						value: 'XX',
 						name: '本周核酸次数'
 					},
 					{
-						value: '0',
+						value: 'XX',
 						name: '核酸总次数'
 					},
 					{
-						value: '22-10-24',
+						value: 'XX',
 						name: '下次检测时间'
 					}
 				],
@@ -101,8 +101,33 @@
 				}
 			}
 		},
+		onLoad() {
+			
+			this.showGraidlist()
+			
+		},
+		computed: {
+			userInfo() {
+				return store.userInfo
+			},
+			hasLogin() {
+				return store.hasLogin
+			}
+		},
 		methods: {
+			/**
+			 * 获取gridlist数据
+			 */
+			async showGraidlist(){
+				const show = uniCloud.importObject("person-grid")
+				let {data} = await show.showDetail()
+				this.gridList.forEach((item,index) => {
+					item.value = data[index]
+				})
+			},
+			
 			toUserInfo() {
+				console.log("toUserInfo点击了");
 				uni.navigateTo({
 					url: '/uni_modules/uni-id-pages/pages/userinfo/userinfo'
 				})
@@ -115,6 +140,21 @@
 					this[item.event]();
 				}
 			},
+			/**
+			 * 获取积分信息
+			 */
+			getScore() {
+				if(!this.userInfo) return uni.showToast({
+					title: '请登录后查看积分',
+					icon: 'none'
+				});
+				uni.showLoading({
+					mask:true
+				})
+				db.collection("uni-id-scores").where('"user_id" == $env.uid').field('score,balance').orderBy("create_date","desc").limit(1).get().then((res) => {
+					console.log("获取积分返回",res);
+				})
+			}
 		}
 	}
 </script>

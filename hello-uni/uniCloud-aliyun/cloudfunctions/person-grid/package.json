@@ -1,0 +1,7 @@
+{
+  "name": "person-grid",
+  "dependencies": {},
+  "extensions": {
+    "uni-cloud-jql": {}
+  }
+}
