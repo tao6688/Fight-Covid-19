@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "手机验证码登录",
+  "usingComponents": {
+    "uni-forms": "/uni_modules/uni-forms/components/uni-forms/uni-forms"
+  }
+}

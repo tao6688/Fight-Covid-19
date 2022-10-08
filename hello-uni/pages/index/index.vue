@@ -5,28 +5,33 @@
 		<!-- 社区疫情防控相关信息 -->
 		<view class="local-message">
 			<view class="title">
-				<view
-					style="height:28rpx;width: 10rpx;background-color:#4169E1;display: inline-block;matgin-right:12rpx;">
-				</view>
-				<text
-					style="color:skyblue;font-size: 28rpx;font-weight: bold;display: inline-block;color: #4169E1;">当前社区疫情动态\n</text>
+					<view
+						style="height:28rpx;width: 10rpx;background-color:#4169E1;display: inline-block;matgin-right:12rpx;">
+					</view>
+					<text style="color:skyblue;font-size: 28rpx;font-weight: bold;display: inline-block;color:#4169E1;">当前社区疫情动态</text>
+					<button size="mini"  
+						  :loading="isloading" 
+						   style="border:deepskyblue;color:orangered;font-weight:900;height:48rpx;;cursor: pointer;line-height: 48rpx;" 
+						   @click="updateCommunityMessage">
+						刷新信息
+					</button>
 			</view>
 			<view class="total_message">
 				<view class="detail_message">
 					<text style="font-size: 16rpx;">社区风险等级</text>
-					<text style="font-size: 18rpx;color: red;">{{RiskStatus}}</text>
+					<text style="font-size: 18rpx;color: red;" id="riskstatus">{{RiskStatus}}</text>
 				</view>
 				<view class="detail_message">
 					<text style="font-size: 16rpx;">社区昨日新增</text>
-					<text style="font-size: 18rpx;color: red;">{{NewCases}}例</text>
+					<text style="font-size: 18rpx;color: red;" id="newcases">{{NewCases}}例</text>
 				</view>
 				<view class="detail_message">
 					<text style="font-size: 14rpx;">社区风险单元</text>
-					<text style="font-size: 18rpx;color:red;">{{RiskBuilding}}</text>
+					<text style="font-size: 18rpx;color:red;" id="riskbuilding">{{RiskBuilding}}</text>
 				</view>
 				<view class="detail_message">
 					<text style="font-size: 14rpx;">社区管控状态</text>
-					<text style="font-size: 18rpx;color:red;">{{ControlStatus}}</text>
+					<text style="font-size: 18rpx;color:red;" id="controlstatus">{{ControlStatus}}</text>
 				</view>
 			</view>
 		</view>
@@ -37,8 +42,7 @@
 				<view
 					style="height:28rpx;width: 10rpx;background-color:#4169E1;display: inline-block;matgin-right:12rpx;">
 				</view>
-				<text
-					style="color:skyblue;font-size: 28rpx;font-weight: bold;display: inline-block;color: #4169E1;">全国疫情地图</text>
+				<text style="color:skyblue;font-size: 28rpx;font-weight: bold;display: inline-block;color:#4169E1;">全国疫情地图</text>
 			</view>
 			<view class="national-map">
 				<view id="map"
@@ -104,7 +108,7 @@
 			<view class="current-progress"
 				style="text-align: center;font-size: 30rpx;margin: 15rpx 20rpx 20rpx 15rpx;color:#008B45;">
 				当前进度:
-				<span style="font-size: 40rpx;color: crimson;">{{currentProgress}}%</span>
+				<span style="font-size: 40rpx;color: green;">{{currentProgress}}%</span>
 			</view>
 		</view>
 	</view>
@@ -123,11 +127,12 @@
 				RiskStatus: '高风险' || '中风险' || '低风险',
 				NewCases: 15,
 				// 风险单元应该设置成为数组，便于通过数组方法添加和删除操作
-				RiskBuilding: '15栋1单元',
+				RiskBuilding: '15栋1单元、12栋2单元、9栋1单元',
 				ControlStatus: '静态管理' || '凭证进出' || '自由出入',
 				chartData: {},
 				updateTimer: '',
 				currentProgress: 0,
+				isloading:false,
 				opts: {
 					timing: "easeOut",
 					duration: 1000,
@@ -208,6 +213,28 @@
 					};
 					this.currentProgress = (Number(this.chartData.series[0].data) * 100).toFixed(1);
 				}, 5000)
+			},
+			// 更新社区疫情信息动态
+			updateCommunityMessage(){
+				this.isloading=true;
+				let riskHtl=document.getElementById('riskstatus');
+				let caseHtl=document.getElementById('newcases');
+				let buildingHtl=document.getElementById('riskbuilding');
+				let controlHtl=document.getElementById('controlstatus');
+				// 设置定时器模拟从服务器拉取最新数据
+				setTimeout(()=>{
+					this.RiskStatus="中风险";
+					this.NewCases=0;
+					this.RiskBuilding="4栋1单元、6栋2单元";
+					this.ControlStatus="凭证进入";
+					riskHtl.style.color="yellow";
+					caseHtl.style.color="green";
+					controlHtl.style.color="yellow";
+					this.isloading=false;
+				},500);
+				// setTimeout(()=>{
+				// 	this.isloading=false;
+				// },200)
 			}
 		},
 		mounted() {
@@ -600,9 +627,9 @@
 			border-radius: 12px;
 			margin: 16rpx 10rpx;
 			padding: 4px 8px;
-
 			.title {
 				display: flex;
+				justify-content: space-between;
 				align-items: center;
 				color: #4169E1;
 				font-size: 24rpx;

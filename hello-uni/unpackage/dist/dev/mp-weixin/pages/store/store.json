@@ -2,6 +2,7 @@
   "navigationBarTitleText": "商城",
   "enablePullDownRefresh": false,
   "usingComponents": {
-    "index": "/components/index/index"
+    "index": "/components/index/index",
+    "recommend": "/components/index/recommend"
   }
 }
