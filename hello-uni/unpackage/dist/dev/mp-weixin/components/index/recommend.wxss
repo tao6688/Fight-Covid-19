@@ -1,0 +1,25 @@
+
+.recommend.data-v-4b4a8bd4{
+	padding: 20rpx;
+}
+.recommend-items.data-v-4b4a8bd4{
+	display: flex;
+	flex-direction: column;
+	border-radius: 20rpx;
+	border: 2rpx solid #CCCCCC; 
+	overflow: hidden;
+	margin: 20rpx 0;
+}
+.items-big.data-v-4b4a8bd4{
+	width: 100%;
+	height: 300rpx;
+}
+.items-small.data-v-4b4a8bd4{
+	width: 100%;
+	height: 240rpx;
+}
+.items-img.data-v-4b4a8bd4{
+	width: 33.3333%;
+	height: 240rpx;
+}
+

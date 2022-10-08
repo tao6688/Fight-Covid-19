@@ -2,7 +2,6 @@
 	<view class='store'>
 		<index></index>
 		<recommend></recommend>
-		
 	</view>
 </template>
 

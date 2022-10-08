@@ -97,8 +97,20 @@ __webpack_require__.r(__webpack_exports__);
 var components
 try {
   components = {
-    uniIcons: function() {
-      return Promise.all(/*! import() | uni_modules/uni-icons/components/uni-icons/uni-icons */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uni-icons/components/uni-icons/uni-icons")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uni-icons/components/uni-icons/uni-icons.vue */ 705))
+    cloudImage: function() {
+      return __webpack_require__.e(/*! import() | uni_modules/uni-id-pages/components/cloud-image/cloud-image */ "uni_modules/uni-id-pages/components/cloud-image/cloud-image").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-id-pages/components/cloud-image/cloud-image.vue */ 1096))
+    },
+    uniGrid: function() {
+      return __webpack_require__.e(/*! import() | uni_modules/uni-grid/components/uni-grid/uni-grid */ "uni_modules/uni-grid/components/uni-grid/uni-grid").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-grid/components/uni-grid/uni-grid.vue */ 1068))
+    },
+    uniGridItem: function() {
+      return __webpack_require__.e(/*! import() | uni_modules/uni-grid/components/uni-grid-item/uni-grid-item */ "uni_modules/uni-grid/components/uni-grid-item/uni-grid-item").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-grid/components/uni-grid-item/uni-grid-item.vue */ 1075))
+    },
+    uniList: function() {
+      return __webpack_require__.e(/*! import() | uni_modules/uni-list/components/uni-list/uni-list */ "uni_modules/uni-list/components/uni-list/uni-list").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-list/components/uni-list/uni-list.vue */ 984))
+    },
+    uniListItem: function() {
+      return __webpack_require__.e(/*! import() | uni_modules/uni-list/components/uni-list-item/uni-list-item */ "uni_modules/uni-list/components/uni-list-item/uni-list-item").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-list/components/uni-list-item/uni-list-item.vue */ 991))
     }
   }
 } catch (e) {
@@ -122,6 +134,36 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
+  var l1 = _vm.__map(_vm.ucenterList, function(sublist, index) {
+    var $orig = _vm.__get_orig(sublist)
+
+    var l0 = _vm.__map(sublist, function(item, i) {
+      var $orig = _vm.__get_orig(item)
+
+      var a0 = {
+        type: item.icon,
+        color: "#999"
+      }
+      return {
+        $orig: $orig,
+        a0: a0
+      }
+    })
+
+    return {
+      $orig: $orig,
+      l0: l0
+    }
+  })
+
+  _vm.$mp.data = Object.assign(
+    {},
+    {
+      $root: {
+        l1: l1
+      }
+    }
+  )
 }
 var recyclableRender = false
 var staticRenderFns = []
@@ -155,7 +197,40 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; //
+/* WEBPACK VAR INJECTION */(function(uniCloud, uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _regenerator = _interopRequireDefault(__webpack_require__(/*! ./node_modules/@babel/runtime/regenerator */ 7));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var _store = __webpack_require__(/*! @/uni_modules/uni-id-pages/common/store.js */ 851);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};} //
 //
 //
 //
@@ -186,43 +261,98 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-var _default =
-{
-  data: function data() {
-    return {};
+var db = uniCloud.database();var _default = { data: function data() {return { gridList: [{ value: 'XX', name: '余额' }, { value: 'XX', name: '本周核酸次数' }, { value: 'XX', name: '核酸总次数' }, { value: 'XX', name: '下次检测时间' }], ucenterList: [[{
+        "title": '阅读过的帖子',
+        "to": '/pages/person/read-news-log/read-news-log',
+        "icon": "flag" },
+
+      {
+        "title": '我的积分',
+        "to": '',
+        "event": 'getScore',
+        "icon": "paperplane" }],
+
+
+      [{
+        "title": '问题与反馈',
+        "to": '/pages/person/feedback/feedback',
+        "icon": "help" },
+      {
+        "title": '设置',
+        "to": '/pages/person/settings/settings',
+        "icon": "gear" }],
+
+      [{
+        "title": '关于',
+        "to": '/pages/person/about/about',
+        "icon": "info" }]],
+
+
+      listStyles: {
+        "height": "150rpx", // 边框高度
+        "width": "150rpx", // 边框宽度
+        "border": { // 如果为 Boolean 值，可以控制边框显示与否
+          "color": "#eee", // 边框颜色
+          "width": "1px", // 边框宽度
+          "style": "solid", // 边框样式
+          "radius": "100%" // 边框圆角，支持百分比
+        } } };
 
 
   },
-  methods: {} };exports.default = _default;
+  onLoad: function onLoad() {
+    this.showGraidlist();
+  },
+  computed: {
+    userInfo: function userInfo() {
+      return _store.store.userInfo;
+    },
+    hasLogin: function hasLogin() {
+      return _store.store.hasLogin;
+    } },
+
+  methods: {
+    /**
+              * 获取gridlist数据
+              */
+    showGraidlist: function showGraidlist() {var _this = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee() {var show, _yield$show$showDetai, data;return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:
+                show = uniCloud.importObject("person-grid");_context.next = 3;return (
+                  show.showDetail());case 3:_yield$show$showDetai = _context.sent;data = _yield$show$showDetai.data;
+                _this.gridList.forEach(function (item, index) {
+                  item.value = data[index];
+                });case 6:case "end":return _context.stop();}}}, _callee);}))();
+    },
+
+    toUserInfo: function toUserInfo() {
+      console.log("toUserInfo点击了");
+      uni.navigateTo({
+        url: '/uni_modules/uni-id-pages/pages/userinfo/userinfo' });
+
+    },
+    /**
+        * 个人中心项目列表点击事件
+        */
+    ucenterListClick: function ucenterListClick(item) {
+      if (!item.to && item.event) {
+        this[item.event]();
+      }
+    },
+    /**
+        * 获取积分信息
+        */
+    getScore: function getScore() {
+      // if(!this.userInfo) return uni.showToast({
+      // 	title: '请登录后查看积分',
+      // 	icon: 'none'
+      // });
+      // uni.showLoading({
+      // 	mask:true
+      // })
+      db.collection("uni-id-scores").where('"user_id" == $env.uid').field('score,balance').orderBy("create_date", "desc").limit(1).get().then(function (res) {
+        console.log("获取积分返回", res);
+      });
+    } } };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/uni-cloud/dist/index.js */ 6)["default"], __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
 
