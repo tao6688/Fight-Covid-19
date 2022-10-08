@@ -2,11 +2,11 @@
 	"bsonType": "object",
 	"required": ["role_id"],
 	"permission": {
-		"read": true,
-		"create": true,
-		"update": true,
-		"delete": true
-	},
+			"read": true,
+			"create": true,
+			"update": true,
+			"delete": true
+		},
 	"properties": {
 		"_id": {
 			"description": "存储文档 ID，系统自动生成"

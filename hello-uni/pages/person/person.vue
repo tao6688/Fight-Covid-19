@@ -149,6 +149,10 @@
 				// uni.showLoading({
 				// 	mask:true
 				// })
+				uni.showModal({
+					title:"积分",
+					content: "当前积分：32分",
+				})
 				db.collection("uni-id-scores").where('"user_id" == $env.uid').field('score,balance').orderBy("create_date","desc").limit(1).get().then((res) => {
 					console.log("获取积分返回",res);
 				})

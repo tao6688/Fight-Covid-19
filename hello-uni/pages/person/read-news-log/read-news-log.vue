@@ -1,75 +1,55 @@
 <template>
 	<view class="container">
-		<!-- <unicloud-db ref="udb" v-slot:default="{data, pagination, loading, hasMore, error}" :where="udbWhere"
-			collection="opendb-news-articles" @load="isLoading == false" @error="isLoading == false"
-			field="title,_id" :page-size="10">
-			<uni-list>
-				<uni-list-item v-for="(item, index) in data" :key="index" :clickable="true"
-					@click="handleItemClick(item)">
-					<template v-slot:body>
-						<view class="item">
-							<text>{{item.title}}</text>
-							<uni-dateformat class="article-date" :date="readNewsLog[index].last_time" format="yyyy-MM-dd hh:mm"
-								:threshold="[0, 0]" />
-						</view>
-					</template>
-				</uni-list-item>
-			</uni-list>
-			<uni-load-state @networkResume="refreshData" :state="{data,pagination,hasMore, loading, error}"></uni-load-state>
-		</unicloud-db> -->
-		<text>阅读过的帖子</text>
+		<uni-list >
+			<uni-list-item v-for="(item, index) in postList" :key="index">
+				<template v-slot:body>
+					<view class="item">
+						<text>{{item.title}}</text>
+						<uni-dateformat class="article-date" :date="item.last_time" format="yyyy-MM-dd hh:mm"
+							:threshold="[0, 0]" />
+					</view>
+				</template>
+			</uni-list-item>
+		</uni-list>
 	</view>
 </template>
 
 <script>
+	const db = uniCloud.database();
+	
 	export default {
 		data() {
 			return {
-				isLoading: true,
-				loadMore: {
-					contentdown: '',
-					contentrefresh: '',
-					contentnomore: '',
-				},
-				readNewsLog:[],
-				udbWhere:''
+				postList: [
+					{
+						title: '标题1',
+						last_time: '2020-11-03'
+					},
+					{
+						title: '标题1',
+						last_time: '2020-11-03'
+					}
+				]
 			}
 		},
 		onLoad() {
-			// this.readNewsLog = uni.getStorageSync('readNewsLog')||[];
-			// let readNewsLogIds = this.readNewsLog.map(({article_id})=>article_id)
-			// console.log(typeof readNewsLogIds,readNewsLogIds);
-			// this.udbWhere = `"_id" in ${JSON.stringify(readNewsLogIds)}`
-			// uni.setNavigationBarTitle({
-			// 	title: this.$t('newsLog.navigationBarTitle')
-			// })
-		},
-		onPullDownRefresh() {
-			this.refreshData();
-		},
-		onReachBottom() {
-			this.$refs.udb.loadMore()
+			this.showPost()
 		},
 		methods: {
-			refreshData() {
-				this.$refs.udb.loadData({
-					clear: true
-				}, (res) => {
-					console.log(res);
-					uni.stopPullDownRefresh()
-				})
-			},
-			handleItemClick(item) {
-				console.log(item);
-				uni.navigateTo({
-					url: '/pages/post/detail?id=' + item._id
-				})
+			async showPost() {
+				let {result} = await db.collection('opendb-news-articles').where({
+				  user_id: '123'
+				}).get()
+				this.postList = result.data
 			}
 		}
 	}
 </script>
 
 <style>
+	page {
+		background-color: #eee;
+	}
 	.item{
 		display: flex;
 		flex-direction: column;

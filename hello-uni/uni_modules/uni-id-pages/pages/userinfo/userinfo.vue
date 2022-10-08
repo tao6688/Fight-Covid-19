@@ -24,7 +24,7 @@
 		</uni-popup>
 		<uni-id-pages-bind-mobile ref="bind-mobile-by-sms" @success="bindMobileSuccess"></uni-id-pages-bind-mobile>
 		<template >
-			<button class="uni-btn" v-if="userInfo._id" @click="logout">退出登录</button>
+			<button v-if="userInfo._id" @click="logout">退出登录</button>
 			<button v-else @click="login">去登录</button>
 		</template>
 	</view>
