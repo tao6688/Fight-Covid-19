@@ -26,14 +26,6 @@
 			}
 		    
 		},{
-            "path" : "pages/letter/letter",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "私信",
-                "enablePullDownRefresh": false
-            }
-            
-        },{
             "path" : "pages/person/person",
             "style" :                                                                                    
             {
@@ -119,28 +111,23 @@
 	// 底部导航配置
 	"tabBar": {
 		"color": "#7A7E83",
-		"selectedColor": "#007AFF",
+		"selectedColor": "#38bfff",
 		"borderStyle": "black",
 		"backgroundColor": "#FFFFFF",
 		"list": [{
 			"pagePath": "pages/index/index",
 			"iconPath": "static/tabbar/list.png",
 			"selectedIconPath": "static/tabbar/list_active.png",
-			"text": "主页"
+			"text": "首页"
 		}, {
 			"pagePath": "pages/post/post",
-			"iconPath": "static/tabbar/grid.png",
-			"selectedIconPath": "static/tabbar/grid_active.png",
+			"iconPath": "static/tabbar/post.png",
+			"selectedIconPath": "static/tabbar/post_active.png",
 			"text": "帖子"
 		}, {
-			"pagePath": "pages/letter/letter",
-			"iconPath": "static/tabbar/grid.png",
-			"selectedIconPath": "static/tabbar/grid_active.png",
-			"text": "私信"
-		}, {
 			"pagePath": "pages/store/store",
-			"iconPath": "static/tabbar/grid.png",
-			"selectedIconPath": "static/tabbar/grid_active.png",
+			"iconPath": "static/tabbar/store.png",
+			"selectedIconPath": "static/tabbar/shop_active.png",
 			"text": "商城"
 		}, {
 			"pagePath": "pages/person/person",

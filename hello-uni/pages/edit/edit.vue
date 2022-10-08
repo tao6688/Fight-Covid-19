@@ -3,17 +3,16 @@
 		<view class="top-area"></view>
 		<view class="edit-area">
 			<form action="">
-				<!-- <view class="edit-item upload-picture">
+				<view class="edit-item upload-picture">
 					<view class="outline">请上传图片</view>
 					<u-upload
 							:fileList="fileList1"
 							@afterRead="afterRead"
 							@delete="deletePic"
 							name="1"
-							multiple
-							:maxCount="10"
+							:maxCount="1"
 						></u-upload>
-				</view> -->
+				</view>
 				<view class="edit-item edit-title">
 					<view class="outline">请添加标题</view>
 					<input type="text" placeholder="请添加标题" v-model="titleVal" @blur="titleInputValidate" />
@@ -44,7 +43,8 @@
 				contentVal: "",
 				titleError: false,
 				introductionErr: false,
-				contentErr: false
+				contentErr: false,
+				picture: ""
 			}
 		},
 		methods:{
@@ -60,38 +60,39 @@
 				lists.map((item) => {
 					this[`fileList${event.name}`].push({
 						...item,
-						status: 'uploading',
-						message: '上传中'
+						// status: 'uploading',
+						// message: '上传中'
 					})
 				})
-				for (let i = 0; i < lists.length; i++) {
-					const result = await this.uploadFilePromise(lists[i].url)
-					let item = this[`fileList${event.name}`][fileListLen]
-					this[`fileList${event.name}`].splice(fileListLen, 1, Object.assign(item, {
-						status: 'success',
-						message: '',
-						url: result
-					}))
-					fileListLen++
-				}
+				this.picture = this[`fileList${event.name}`][0].url;
+				// for (let i = 0; i < lists.length; i++) {
+				// 	const result = await this.uploadFilePromise(lists[i].url)
+				// 	let item = this[`fileList${event.name}`][fileListLen]
+				// 	this[`fileList${event.name}`].splice(fileListLen, 1, Object.assign(item, {
+				// 		status: 'success',
+				// 		message: '',
+				// 		url: result
+				// 	}))
+				// 	fileListLen++
+				// }
 			},
-			uploadFilePromise(url) {
-				return new Promise((resolve, reject) => {
-					let a = uni.uploadFile({
-						url: 'http://192.168.2.21:7001/upload', // 仅为示例，非真实的接口地址
-						filePath: url,
-						name: 'file',
-						formData: {
-							user: 'test'
-						},
-						success: (res) => {
-							setTimeout(() => {
-								resolve(res.data.data)
-							}, 1000)
-						}
-					});
-				})
-			},
+			// uploadFilePromise(url) {
+			// 	return new Promise((resolve, reject) => {
+			// 		let a = uni.uploadFile({
+			// 			url: 'http://192.168.2.21:7001/upload', // 仅为示例，非真实的接口地址
+			// 			filePath: url,
+			// 			name: 'file',
+			// 			formData: {
+			// 				user: 'test'
+			// 			},
+			// 			success: (res) => {
+			// 				setTimeout(() => {
+			// 					resolve(res.data.data)
+			// 				}, 1000)
+			// 			}
+			// 		});
+			// 	})
+			// },
 			titleInputValidate() {
 				if(this.titleVal.trim() === '') {
 					this.titleError = true
@@ -134,7 +135,7 @@
 						name: "article",
 						data: {
 							type:"add",
-							picture: "https://img1.imgtp.com/2022/09/30/eyqX5vbv.png",
+							picture: this.picture,
 							title: this.titleVal,
 							introduction: this.introductionVal,
 							content: this.contentVal,
