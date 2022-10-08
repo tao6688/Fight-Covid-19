@@ -152,7 +152,9 @@
 			max-height: 650px;
 		}
 	}
-
+	page {
+		background-color: #efefef;
+	}
 	.forget {
 		font-size: 12px;
 		color: #8a8f8b;

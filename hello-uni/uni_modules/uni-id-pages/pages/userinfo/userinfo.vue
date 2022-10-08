@@ -23,8 +23,8 @@
 			</uni-popup-dialog>
 		</uni-popup>
 		<uni-id-pages-bind-mobile ref="bind-mobile-by-sms" @success="bindMobileSuccess"></uni-id-pages-bind-mobile>
-		<template v-if="showLoginManage">
-			<button v-if="userInfo._id" @click="logout">退出登录</button>
+		<template >
+			<button class="uni-btn" v-if="userInfo._id" @click="logout">退出登录</button>
 			<button v-else @click="login">去登录</button>
 		</template>
 	</view>
@@ -71,6 +71,8 @@
 			}
 			//判断当前用户是否有密码，否则就不显示密码修改功能
 			let res = await uniIdCo.getAccountInfo()
+			console.log("store",store.userInfo);
+			console.log("res",res);
 			this.hasPwd = res.isPasswordSet
 		},
 		methods: {
@@ -135,7 +137,7 @@
 						})
 					},
 					fail: (err) => {
-						console.log(err);
+						console.log("err",err);
 						if (err.code == '30002' || err.code == '30001') {
 							this.bindMobileBySmsCode()
 						}
@@ -148,7 +150,7 @@
 				})
 			},
 			setNickname(nickname) {
-				console.log(nickname);
+				console.log("nickname",nickname);
 				if (nickname) {
 					mutations.updateUserInfo({nickname})
 					this.$refs.dialog.close()
@@ -171,7 +173,6 @@
 	.uni-content {
 		padding: 0;
 	}
-
 	/* #ifndef APP-NVUE */
 	view {
 		display: flex;

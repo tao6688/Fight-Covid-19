@@ -1,13 +1,7 @@
 <!-- 账号注册页 -->
 <template>
-	<view class="uni-content">
-		<match-media :min-width="690">
-			<view class="login-logo">
-				<image :src="logo"></image>
-			</view>
-			<!-- 顶部文字 -->
-			<text class="title title-box">用户名密码注册</text>
-		</match-media>
+	<view class="uni-content" style="background-color: #ffffff;height: 100%;" >
+		<text class="title title-box">用户名密码注册</text>
 		<uni-forms ref="form" :value="formData" :rules="rules" validate-trigger="submit" err-show-type="toast">
 			<uni-forms-item name="username" required>
 				<uni-easyinput :inputBorder="false" :focus="focusUsername" @blur="focusUsername = false"
@@ -34,12 +28,6 @@
 			<uni-id-pages-agreements scope="register" ref="agreements"></uni-id-pages-agreements>
 			<button class="uni-btn" type="primary" @click="submit">注册</button>
 			<button @click="navigateBack" class="register-back">返回</button>
-			<match-media :min-width="690">
-				<view class="link-box">
-					<text class="link" @click="registerByEmail">邮箱验证码注册</text>
-					<text class="link" @click="toLogin">已有账号？点此登录</text>
-				</view>
-			</match-media>
 		</uni-forms>
 	</view>
 </template>
@@ -182,5 +170,8 @@
 
 	button {
 		margin-top: 15px;
+	}
+	uni-forms {
+		height: 100%;
 	}
 </style>
