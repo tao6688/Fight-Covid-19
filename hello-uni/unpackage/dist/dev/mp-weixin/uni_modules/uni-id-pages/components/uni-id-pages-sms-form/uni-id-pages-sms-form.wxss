@@ -1,0 +1,43 @@
+@charset "UTF-8";
+/* 水平间距 */
+/* 水平间距 */
+.box.data-v-311d2b6f {
+  position: relative;
+  margin-top: 10px;
+}
+.short-code-btn.data-v-311d2b6f {
+  padding: 0;
+  position: absolute;
+  top: 0;
+  right: 8px;
+  width: 260rpx;
+  max-width: 100px;
+  height: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.inner-text.data-v-311d2b6f {
+  font-size: 14px;
+  color: #AAAAAA;
+}
+.inner-text-active.data-v-311d2b6f {
+  color: #04498c;
+}
+.captcha.data-v-311d2b6f {
+  width: 350rpx;
+}
+.input-box.data-v-311d2b6f {
+  margin: 0;
+  padding: 4px;
+  background-color: #F8F8F8;
+  font-size: 14px;
+}
+.box.data-v-311d2b6f  .content-clear-icon {
+  margin-right: 110px;
+}
+.box.data-v-311d2b6f {
+  display: flex;
+  flex-direction: row;
+}
+

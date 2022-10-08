@@ -65,6 +65,7 @@
 					})
 				})
 				this.picture = this[`fileList${event.name}`][0].url;
+				console.log(this[`fileList${event.name}`][0].url);
 				// for (let i = 0; i < lists.length; i++) {
 				// 	const result = await this.uploadFilePromise(lists[i].url)
 				// 	let item = this[`fileList${event.name}`][fileListLen]

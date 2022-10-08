@@ -57,7 +57,7 @@ page {
   width: 100%;
   border: 2rpx solid #f1f1f1;
   border-radius: 16rpx;
-  padding: 16rpx 20rpx 5rpx 20rpx;
+  padding: 16rpx 20rpx 20rpx 20rpx;
   box-sizing: border-box;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
   margin-bottom: 20rpx;

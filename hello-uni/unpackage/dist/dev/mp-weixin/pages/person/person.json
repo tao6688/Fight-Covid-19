@@ -1,7 +1,11 @@
 {
-  "navigationBarTitleText": "uni-app",
+  "navigationBarTitleText": "个人中心",
   "enablePullDownRefresh": false,
   "usingComponents": {
-    "uni-icons": "/uni_modules/uni-icons/components/uni-icons/uni-icons"
+    "cloud-image": "/uni_modules/uni-id-pages/components/cloud-image/cloud-image",
+    "uni-grid": "/uni_modules/uni-grid/components/uni-grid/uni-grid",
+    "uni-grid-item": "/uni_modules/uni-grid/components/uni-grid-item/uni-grid-item",
+    "uni-list": "/uni_modules/uni-list/components/uni-list/uni-list",
+    "uni-list-item": "/uni_modules/uni-list/components/uni-list-item/uni-list-item"
   }
 }
