@@ -136,7 +136,9 @@
 
 <style lang="scss" scoped>
 	@import "@/uni_modules/uni-id-pages/common/login-page.scss";
-
+	page {
+		background-color: #efefef;
+	}
 	.uni-content,
 	.quickLogin {
 		/* #ifndef APP-NVUE */

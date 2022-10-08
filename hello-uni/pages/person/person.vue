@@ -5,7 +5,7 @@
 			<image v-else class="logo-img" src="@/static/uni-center/defaultAvatarUrl.png"></image>
 			<view class="logo-title">
 				<text class="uer-name" v-if="hasLogin">{{userInfo.nickname||userInfo.username||userInfo.mobile}}</text>
-				<text class="uer-name">您好，住户</text>
+				<text class="uer-name" v-else>您好，住户</text>
 			</view>
 		</view>
 		<uni-grid class="grid" :column="4" :showBorder="false" :square="true">
@@ -64,7 +64,7 @@
 						//#endif
 						{
 							"title": '阅读过的帖子',
-							"to": '/pages/ucenter/read-news-log/read-news-log',
+							"to": '/pages/person/read-news-log/read-news-log',
 							"icon": "flag"
 						},
 						{
@@ -102,9 +102,7 @@
 			}
 		},
 		onLoad() {
-			
 			this.showGraidlist()
-			
 		},
 		computed: {
 			userInfo() {
@@ -144,13 +142,13 @@
 			 * 获取积分信息
 			 */
 			getScore() {
-				if(!this.userInfo) return uni.showToast({
-					title: '请登录后查看积分',
-					icon: 'none'
-				});
-				uni.showLoading({
-					mask:true
-				})
+				// if(!this.userInfo) return uni.showToast({
+				// 	title: '请登录后查看积分',
+				// 	icon: 'none'
+				// });
+				// uni.showLoading({
+				// 	mask:true
+				// })
 				db.collection("uni-id-scores").where('"user_id" == $env.uid').field('score,balance').orderBy("create_date","desc").limit(1).get().then((res) => {
 					console.log("获取积分返回",res);
 				})

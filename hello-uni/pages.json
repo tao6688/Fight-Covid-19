@@ -165,6 +165,15 @@
 				"navigationBarTitleText": "注册管理员账号"
 			}
 		}
+        ,{
+            "path" : "pages/person/read-news-log/read-news-log",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "阅读过的帖子",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "white",
