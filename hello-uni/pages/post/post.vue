@@ -14,7 +14,7 @@
 					<image :src="post.picture" mode="widthFix"></image>
 					<view class="item-introdution">{{post.introduction}}</view>
 				</view>
-				<!-- <view class="item-features">
+				<view class="item-features">
 					<view class="feature browse">
 						<image src="../../static/imgs/postImg/icon-browse.png"></image>
 						<view class="num">{{post.browse_num}}</view>
@@ -27,7 +27,7 @@
 						<image src="../../static/imgs/postImg/icon-comment.png"></image>
 						<view class="num">{{post.comment_num}}</view>
 					</view>
-				</view> -->
+				</view>
 			</view>
 		</view>
 		<navigator class="go-to-post" url="../edit/edit">
@@ -156,7 +156,7 @@
 				// height: 200rpx;
 				border: 2rpx solid #f1f1f1;
 				border-radius: 16rpx;
-				padding: 16rpx 20rpx 20rpx 20rpx;
+				padding: 16rpx 20rpx 5rpx 20rpx;
 				box-sizing: border-box;
 				box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 				margin-bottom: 20rpx;

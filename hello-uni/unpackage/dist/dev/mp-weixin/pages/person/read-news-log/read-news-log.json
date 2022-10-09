@@ -1,5 +1,9 @@
 {
   "navigationBarTitleText": "阅读过的帖子",
+<<<<<<< HEAD
   "enablePullDownRefresh": false,
   "usingComponents": {}
+=======
+  "enablePullDownRefresh": false
+>>>>>>> 361040524738884b49511600146055a3e6332e5d
 }

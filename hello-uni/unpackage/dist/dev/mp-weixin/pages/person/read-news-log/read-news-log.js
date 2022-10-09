@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 (global["webpackJsonp"] = global["webpackJsonp"] || []).push([["pages/person/read-news-log/read-news-log"],{
 
 /***/ 828:
@@ -234,3 +235,6 @@ __webpack_require__.r(__webpack_exports__);
 
 },[[828,"common/runtime","common/vendor"]]]);
 //# sourceMappingURL=../../../../.sourcemap/mp-weixin/pages/person/read-news-log/read-news-log.js.map
+=======
+Component({})
+>>>>>>> 361040524738884b49511600146055a3e6332e5d
