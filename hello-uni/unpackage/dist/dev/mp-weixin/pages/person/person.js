@@ -98,19 +98,19 @@ var components
 try {
   components = {
     cloudImage: function() {
-      return __webpack_require__.e(/*! import() | uni_modules/uni-id-pages/components/cloud-image/cloud-image */ "uni_modules/uni-id-pages/components/cloud-image/cloud-image").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-id-pages/components/cloud-image/cloud-image.vue */ 837))
+      return __webpack_require__.e(/*! import() | uni_modules/uni-id-pages/components/cloud-image/cloud-image */ "uni_modules/uni-id-pages/components/cloud-image/cloud-image").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-id-pages/components/cloud-image/cloud-image.vue */ 845))
     },
     uniGrid: function() {
-      return __webpack_require__.e(/*! import() | uni_modules/uni-grid/components/uni-grid/uni-grid */ "uni_modules/uni-grid/components/uni-grid/uni-grid").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-grid/components/uni-grid/uni-grid.vue */ 842))
+      return __webpack_require__.e(/*! import() | uni_modules/uni-grid/components/uni-grid/uni-grid */ "uni_modules/uni-grid/components/uni-grid/uni-grid").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-grid/components/uni-grid/uni-grid.vue */ 850))
     },
     uniGridItem: function() {
-      return __webpack_require__.e(/*! import() | uni_modules/uni-grid/components/uni-grid-item/uni-grid-item */ "uni_modules/uni-grid/components/uni-grid-item/uni-grid-item").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-grid/components/uni-grid-item/uni-grid-item.vue */ 849))
+      return __webpack_require__.e(/*! import() | uni_modules/uni-grid/components/uni-grid-item/uni-grid-item */ "uni_modules/uni-grid/components/uni-grid-item/uni-grid-item").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-grid/components/uni-grid-item/uni-grid-item.vue */ 857))
     },
     uniList: function() {
-      return __webpack_require__.e(/*! import() | uni_modules/uni-list/components/uni-list/uni-list */ "uni_modules/uni-list/components/uni-list/uni-list").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-list/components/uni-list/uni-list.vue */ 856))
+      return __webpack_require__.e(/*! import() | uni_modules/uni-list/components/uni-list/uni-list */ "uni_modules/uni-list/components/uni-list/uni-list").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-list/components/uni-list/uni-list.vue */ 864))
     },
     uniListItem: function() {
-      return __webpack_require__.e(/*! import() | uni_modules/uni-list/components/uni-list-item/uni-list-item */ "uni_modules/uni-list/components/uni-list-item/uni-list-item").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-list/components/uni-list-item/uni-list-item.vue */ 863))
+      return __webpack_require__.e(/*! import() | uni_modules/uni-list/components/uni-list-item/uni-list-item */ "uni_modules/uni-list/components/uni-list-item/uni-list-item").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-list/components/uni-list-item/uni-list-item.vue */ 871))
     }
   }
 } catch (e) {
@@ -263,7 +263,7 @@ var _store = __webpack_require__(/*! @/uni_modules/uni-id-pages/common/store.js 
 //
 var db = uniCloud.database();var _default = { data: function data() {return { gridList: [{ value: 'XX', name: '余额' }, { value: 'XX', name: '本周核酸次数' }, { value: 'XX', name: '核酸总次数' }, { value: 'XX', name: '下次检测时间' }], ucenterList: [[{
         "title": '阅读过的帖子',
-        "to": '/pages/ucenter/read-news-log/read-news-log',
+        "to": '/pages/person/read-news-log/read-news-log',
         "icon": "flag" },
 
       {
@@ -301,9 +301,7 @@ var db = uniCloud.database();var _default = { data: function data() {return { gr
 
   },
   onLoad: function onLoad() {
-
     this.showGraidlist();
-
   },
   computed: {
     userInfo: function userInfo() {
@@ -343,13 +341,13 @@ var db = uniCloud.database();var _default = { data: function data() {return { gr
         * 获取积分信息
         */
     getScore: function getScore() {
-      if (!this.userInfo) return uni.showToast({
-        title: '请登录后查看积分',
-        icon: 'none' });
-
-      uni.showLoading({
-        mask: true });
-
+      // if(!this.userInfo) return uni.showToast({
+      // 	title: '请登录后查看积分',
+      // 	icon: 'none'
+      // });
+      // uni.showLoading({
+      // 	mask:true
+      // })
       db.collection("uni-id-scores").where('"user_id" == $env.uid').field('score,balance').orderBy("create_date", "desc").limit(1).get().then(function (res) {
         console.log("获取积分返回", res);
       });

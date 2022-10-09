@@ -20,7 +20,7 @@
 				<view class="text-top">
 					<img src="https://img1.imgtp.com/2022/10/03/zKk6cjDc.jpg">
 					<view class="post-name">
-						{{post.post_name}}
+						{{posts.user_name}}
 					</view>
 				</view>
 				<!-- 文字 -->
@@ -32,35 +32,35 @@
 					<view class="feature browse">
 						<!-- <img src="@/static/imgs/postImg/icon-browse.png" > -->
 						<image src="../../static/imgs/postImg/icon-browse.png"></image>
-						<view class="num">{{post.post_browse_num}}</view>
+						<view class="num">{{posts.browse_num}}</view>
 					</view>
 					<view class="feature praise">
 						<image src="../../static/imgs/postImg/icon-praise.png" @click="add_praise"></image>
-						<view class="num">{{post.post_praise_num}}</view>
+						<view class="num">{{posts.praise_num}}</view>
 					</view>
 					<view class="feature comment" url="../edit/edit">
 						<image src="../../static/imgs/postImg/icon-comment.png"></image>
-						<view class="num">{{post.post_comment_num}}</view>
+						<view class="num">{{posts.comment_num}}</view>
 					</view>
 				</view>
 			</view>
 
 			<!-- 评价输入框 -->
 			<view class="input-comment">
-				<input type="text" placeholder="评价千万条 友善第一条">
+				<input type="text" placeholder="评价千万条 友善第一条" @input="get_comment">
 				<button @click="add_comment">发布</button>
 			</view>
 
 			<!-- 详细的评价 -->
 			<view class="detail-comment">
-				<view class="comment-list" v-for="(com,index) in post.post_comment" :key="index">
+				<view class="comment-list" v-for="(com,index) in comments" :key="index">
 					<view class="text-top">
-						<img src="https://img1.imgtp.com/2022/10/03/zKk6cjDc.jpg" alt="">
+						<img :src="com.user_picture" alt="">
 						<view class="post-name">
-							{{com.comment_name}}
+							{{com.user_name}}
 						</view>
 						<view class="comment">
-							{{com.comment_text}}
+							{{com.user_content}}
 						</view>
 					</view>
 				</view>
@@ -74,77 +74,109 @@
 	export default {
 		data() {
 			return {
+				text:"",
 				article_id: "",
-				post: {
-					post_id: 1,
-					post_name: "匿名用户",
-					post_img: 'https: //img1.imgtp.com/2022/10/03/zKk6cjDc.jpg',
-					post_title: '这是标题1',
-					post_introdution: '这是简介1这是简介1这是简介1这是简介1这是简介1这是简介1这是简介1这是简介1这是简介1这是简介1这是简介1这是简介1',
-					post_browse_num: 399,
-					post_praise_num: 77,
-					post_comment_num: 10,
-					post_content: '这是文章内容1这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容',
-					post_edit_time: '2022-9-30 12:00',
-					post_comment: [{
-							comment_name: "匿名用户",
-							comment_img: "https: //img1.imgtp.com/2022/10/03/zKk6cjDc.jpg",
-								comment_text: "这是评价1这是评价1这是评价1这是评价1这是评价1这是评价1这是评价1这是评价1这是评价1"
-						},
-						{
-							comment_name: "匿名用户",
-							comment_img: "https: //img1.imgtp.com/2022/10/03/zKk6cjDc.jpg",
-								comment_text: "这是评价2"
-						},
-						{
-							comment_name: "匿名用户",
-							comment_img: "https: //img1.imgtp.com/2022/10/03/zKk6cjDc.jpg",
-								comment_text: "这是评价3"
-						},
-						{
-							comment_name: "匿名用户",
-							comment_img: "https: //img1.imgtp.com/2022/10/03/zKk6cjDc.jpg",
-								comment_text: "这是评价4"
-						},
-						{
-							comment_name: "匿名用户",
-							comment_img: "https: //img1.imgtp.com/2022/10/03/zKk6cjDc.jpg",
-								comment_text: "这是评价5"
-						},
-						{
-							comment_name: "匿名用户",
-							comment_img: "https: //img1.imgtp.com/2022/10/03/zKk6cjDc.jpg",
-								comment_text: "这是评价6"
-						},
-						{
-							comment_name: "匿名用户",
-							comment_img: "https: //img1.imgtp.com/2022/10/03/zKk6cjDc.jpg",
-								comment_text: "这是评价7"
-						},
-						{
-							comment_name: "匿名用户",
-							comment_img: "https: //img1.imgtp.com/2022/10/03/zKk6cjDc.jpg",
-								comment_text: "这是评价8"
-						}
+				// post: {
+				// 	post_id: 1,
+				// 	post_name: "匿名用户",
+				// 	post_img: 'https: //img1.imgtp.com/2022/10/03/zKk6cjDc.jpg',
+				// 	post_title: '这是标题1',
+				// 	post_introdution: '这是简介1这是简介1这是简介1这是简介1这是简介1这是简介1这是简介1这是简介1这是简介1这是简介1这是简介1这是简介1',
+				// 	post_browse_num: 399,
+				// 	post_praise_num: 77,
+				// 	post_comment_num: 10,
+				// 	post_content: '这是文章内容1这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容',
+				// 	post_edit_time: '2022-9-30 12:00',
+				// 	post_comment: [{
+				// 			comment_name: "匿名用户",
+				// 			comment_img: "https: //img1.imgtp.com/2022/10/03/zKk6cjDc.jpg",
+				// 				comment_text: "这是评价1这是评价1这是评价1这是评价1这是评价1这是评价1这是评价1这是评价1这是评价1"
+				// 		},
+				// 		{
+				// 			comment_name: "匿名用户",
+				// 			comment_img: "https: //img1.imgtp.com/2022/10/03/zKk6cjDc.jpg",
+				// 				comment_text: "这是评价2"
+				// 		},
+				// 		{
+				// 			comment_name: "匿名用户",
+				// 			comment_img: "https: //img1.imgtp.com/2022/10/03/zKk6cjDc.jpg",
+				// 				comment_text: "这是评价3"
+				// 		},
+				// 		{
+				// 			comment_name: "匿名用户",
+				// 			comment_img: "https: //img1.imgtp.com/2022/10/03/zKk6cjDc.jpg",
+				// 				comment_text: "这是评价4"
+				// 		},
+				// 		{
+				// 			comment_name: "匿名用户",
+				// 			comment_img: "https: //img1.imgtp.com/2022/10/03/zKk6cjDc.jpg",
+				// 				comment_text: "这是评价5"
+				// 		},
+				// 		{
+				// 			comment_name: "匿名用户",
+				// 			comment_img: "https: //img1.imgtp.com/2022/10/03/zKk6cjDc.jpg",
+				// 				comment_text: "这是评价6"
+				// 		},
+				// 		{
+				// 			comment_name: "匿名用户",
+				// 			comment_img: "https: //img1.imgtp.com/2022/10/03/zKk6cjDc.jpg",
+				// 				comment_text: "这是评价7"
+				// 		},
+				// 		{
+				// 			comment_name: "匿名用户",
+				// 			comment_img: "https: //img1.imgtp.com/2022/10/03/zKk6cjDc.jpg",
+				// 				comment_text: "这是评价8"
+				// 		}
 
-					]
-				},
-				posts: {}
+				// 	]
+				// },
+				posts: {},
+				comments:{}
 			}
 		},
 		methods: {
+		
+			get_comment(e){
+				this.text = e.target.value;
+				
+			},
 			add_praise() {
-				this.post.post_praise_num += 1;
+				// this.post.post_praise_num += 1;
 			},
 			add_comment() {
 				var com = {
-					comment_name: "匿名用户",
-					comment_img: "https: //img1.imgtp.com/2022/10/03/zKk6cjDc.jpg",
-						comment_text: "这是评价8"
+					user_name: "匿名用户",
+					user_picture: "https://img1.imgtp.com/2022/10/03/zKk6cjDc.jpg",
+					user_content: this.text,
+					post_id:this.posts._id
 				};
 				console.log('发布评论');
-				this.post.post_comment.push(com);
-
+				this.comments.push(com);
+				uniCloud.callFunction({
+					name: "article",
+					data: {
+						type:"add_com",
+						user_name: "匿名用户",
+						user_picture: "https://img1.imgtp.com/2022/10/03/zKk6cjDc.jpg",
+						user_content: this.text,
+						post_id:this.posts._id
+					},
+					success: (res) => {
+						uni.showToast({
+							title: "发布成功",
+							icon: 'success',
+							duration: 1000
+						})
+						// setTimeout(()=>{
+						// 	uni.switchTab({
+						// 		url: "/pages/post/post"
+						// 	})
+						// },2000)
+					},
+					fail: (err) => {
+						console.log(err);
+					}
+				})
 			}
 		},
 		onLoad(e) {
@@ -157,6 +189,20 @@
 				},
 				success: (res) => {
 					this.posts = res.result.data[0]
+				},
+				fail: (err) => {
+					console.log(err);
+				}
+			});
+			// 根据id找评价
+			uniCloud.callFunction({
+				name:"article",
+				data:{
+					type:"comment",
+					id:this.article_id
+				},
+				success: (res) => {
+					this.comments = res.result.data
 				},
 				fail: (err) => {
 					console.log(err);

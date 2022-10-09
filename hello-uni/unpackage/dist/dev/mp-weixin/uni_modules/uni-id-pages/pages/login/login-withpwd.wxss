@@ -61,6 +61,9 @@
     max-height: 650px;
 }
 }
+page.data-v-9dec0b32 {
+  background-color: #efefef;
+}
 .forget.data-v-9dec0b32 {
   font-size: 12px;
   color: #8a8f8b;

@@ -56,6 +56,9 @@
 .uni-body.uni_modules-uni-id-pages-pages-login-login-withoutpwd.data-v-3d746ff5 {
   height: auto !important;
 }
+page.data-v-3d746ff5 {
+  background-color: #efefef;
+}
 .uni-content.data-v-3d746ff5,
 .quickLogin.data-v-3d746ff5 {
   display: flex;

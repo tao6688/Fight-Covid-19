@@ -98,19 +98,19 @@ var components
 try {
   components = {
     uniForms: function() {
-      return Promise.all(/*! import() | uni_modules/uni-forms/components/uni-forms/uni-forms */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uni-forms/components/uni-forms/uni-forms")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uni-forms/components/uni-forms/uni-forms.vue */ 894))
+      return Promise.all(/*! import() | uni_modules/uni-forms/components/uni-forms/uni-forms */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uni-forms/components/uni-forms/uni-forms")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uni-forms/components/uni-forms/uni-forms.vue */ 902))
     },
     uniFormsItem: function() {
-      return __webpack_require__.e(/*! import() | uni_modules/uni-forms/components/uni-forms-item/uni-forms-item */ "uni_modules/uni-forms/components/uni-forms-item/uni-forms-item").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-forms/components/uni-forms-item/uni-forms-item.vue */ 903))
+      return __webpack_require__.e(/*! import() | uni_modules/uni-forms/components/uni-forms-item/uni-forms-item */ "uni_modules/uni-forms/components/uni-forms-item/uni-forms-item").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-forms/components/uni-forms-item/uni-forms-item.vue */ 911))
     },
     uniEasyinput: function() {
-      return __webpack_require__.e(/*! import() | uni_modules/uni-easyinput/components/uni-easyinput/uni-easyinput */ "uni_modules/uni-easyinput/components/uni-easyinput/uni-easyinput").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-easyinput/components/uni-easyinput/uni-easyinput.vue */ 919))
+      return __webpack_require__.e(/*! import() | uni_modules/uni-easyinput/components/uni-easyinput/uni-easyinput */ "uni_modules/uni-easyinput/components/uni-easyinput/uni-easyinput").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-easyinput/components/uni-easyinput/uni-easyinput.vue */ 927))
     },
     uniCaptcha: function() {
-      return __webpack_require__.e(/*! import() | uni_modules/uni-captcha/components/uni-captcha/uni-captcha */ "uni_modules/uni-captcha/components/uni-captcha/uni-captcha").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-captcha/components/uni-captcha/uni-captcha.vue */ 995))
+      return __webpack_require__.e(/*! import() | uni_modules/uni-captcha/components/uni-captcha/uni-captcha */ "uni_modules/uni-captcha/components/uni-captcha/uni-captcha").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-captcha/components/uni-captcha/uni-captcha.vue */ 1003))
     },
     uniIdPagesAgreements: function() {
-      return __webpack_require__.e(/*! import() | uni_modules/uni-id-pages/components/uni-id-pages-agreements/uni-id-pages-agreements */ "uni_modules/uni-id-pages/components/uni-id-pages-agreements/uni-id-pages-agreements").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-id-pages/components/uni-id-pages-agreements/uni-id-pages-agreements.vue */ 981))
+      return __webpack_require__.e(/*! import() | uni_modules/uni-id-pages/components/uni-id-pages-agreements/uni-id-pages-agreements */ "uni_modules/uni-id-pages/components/uni-id-pages-agreements/uni-id-pages-agreements").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-id-pages/components/uni-id-pages-agreements/uni-id-pages-agreements.vue */ 989))
     }
   }
 } catch (e) {
@@ -219,18 +219,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 var _validator = _interopRequireDefault(__webpack_require__(/*! ./validator.js */ 778));
 var _loginPageMixin = _interopRequireDefault(__webpack_require__(/*! @/uni_modules/uni-id-pages/common/login-page.mixin.js */ 753));
 var _config = _interopRequireDefault(__webpack_require__(/*! @/uni_modules/uni-id-pages/config.js */ 752));
@@ -268,21 +256,21 @@ var _store = __webpack_require__(/*! @/uni_modules/uni-id-pages/common/store.js 
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-var loginSuccess = _store.mutations.loginSuccess;var uniIdCo = uniCloud.importObject("uni-id-co");var _default = { mixins: [_loginPageMixin.default], data: function data() {return { formData: { username: "", nickname: "", password: "", password2: "", captcha: "" }, rules: _validator.default, focusUsername: false, focusNickname: false, focusPassword: false, focusPassword2: false, logo: "/static/logo.png" };}, onReady: function onReady() {this.$refs.form.setRules(this.rules);}, onShow: function onShow() {}, methods: { /**
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           * 触发表单提交
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           */submit: function submit() {var _this = this;this.$refs.form.validate().then(function (res) {if (_this.formData.captcha.length != 4) {_this.$refs.captcha.focusCaptchaInput = true;
+var loginSuccess = _store.mutations.loginSuccess;var uniIdCo = uniCloud.importObject("uni-id-co");var _default = { mixins: [_loginPageMixin.default], data: function data() {return { formData: { username: "", nickname: "", password: "", password2: "", captcha: "" }, rules: _validator.default, focusUsername: false, focusNickname: false, focusPassword: false, focusPassword2: false, logo: "/static/logo.png" };}, onReady: function onReady() {this.$refs.form.setRules(this.rules);}, onShow: function onShow() {
+
+
+
+
+
+  },
+  methods: {
+    /**
+              * 触发表单提交
+              */
+    submit: function submit() {var _this = this;
+      this.$refs.form.validate().then(function (res) {
+        if (_this.formData.captcha.length != 4) {
+          _this.$refs.captcha.focusCaptchaInput = true;
           return uni.showToast({
             title: '请输入验证码',
             icon: 'none' });

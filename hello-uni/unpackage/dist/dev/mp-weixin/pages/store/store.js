@@ -96,7 +96,7 @@ var components
 try {
   components = {
     index: function() {
-      return __webpack_require__.e(/*! import() | components/index/index */ "components/index/index").then(__webpack_require__.bind(null, /*! @/components/index/index.vue */ 880))
+      return __webpack_require__.e(/*! import() | components/index/index */ "components/index/index").then(__webpack_require__.bind(null, /*! @/components/index/index.vue */ 888))
     }
   }
 } catch (e) {
@@ -153,7 +153,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var index = function index() {__webpack_require__.e(/*! require.ensure | components/index/index */ "components/index/index").then((function () {return resolve(__webpack_require__(/*! @/components/index/index.vue */ 880));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var recommend = function recommend() {__webpack_require__.e(/*! require.ensure | components/index/recommend */ "components/index/recommend").then((function () {return resolve(__webpack_require__(/*! @/components/index/recommend.vue */ 887));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var index = function index() {__webpack_require__.e(/*! require.ensure | components/index/index */ "components/index/index").then((function () {return resolve(__webpack_require__(/*! @/components/index/index.vue */ 888));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var recommend = function recommend() {__webpack_require__.e(/*! require.ensure | components/index/recommend */ "components/index/recommend").then((function () {return resolve(__webpack_require__(/*! @/components/index/recommend.vue */ 895));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
 
 
 

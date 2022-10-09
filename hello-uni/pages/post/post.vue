@@ -1,7 +1,7 @@
 <template>
 	<view class="post-page">
 		<view class="top-area">
-			<input type="text" placeholder="搜索帖子" />
+			<!-- <input type="text" placeholder="搜索帖子" /> -->
 		</view>
 		<!-- <view class="classify">
 			<view class="active classify-item">全部</view>

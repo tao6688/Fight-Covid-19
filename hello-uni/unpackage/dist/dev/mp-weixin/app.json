@@ -22,7 +22,8 @@
     "uni_modules/uni-id-pages/pages/userinfo/change_pwd/change_pwd",
     "uni_modules/uni-id-pages/pages/register/register-by-email",
     "uni_modules/uni-id-pages/pages/retrieve/retrieve-by-email",
-    "uni_modules/uni-id-pages/pages/register/register-admin"
+    "uni_modules/uni-id-pages/pages/register/register-admin",
+    "pages/person/read-news-log/read-news-log"
   ],
   "subPackages": [],
   "window": {

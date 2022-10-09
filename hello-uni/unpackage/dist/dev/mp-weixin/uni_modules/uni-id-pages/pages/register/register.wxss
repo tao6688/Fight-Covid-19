@@ -85,4 +85,7 @@
 button {
   margin-top: 15px;
 }
+uni-forms {
+  height: 100%;
+}
 
